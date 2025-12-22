@@ -1,0 +1,626 @@
+{
+  "scanInfo": {
+    "scanStartTime": "2025-12-22T19:27:40.8643459-03:00",
+    "scanEndTime": "2025-12-22T19:28:41.8724463-03:00",
+    "scanDuration": "61.0s",
+    "range": "192.168.150.1-100",
+    "totalScanned": 100,
+    "totalFound": 9,
+    "totalSuccessful": 9,
+    "communityString": "public",
+    "byBrand": {
+      "HP": 1,
+      "Samsung": 7,
+      "Xerox": 1
+    },
+    "healthStats": {
+      "criticalAlerts": 0,
+      "warnings": 0,
+      "healthy": 0
+    },
+    "avgResponseTimeMs": 4623.111111111111,
+    "successRate": 9
+  },
+  "printers": [
+    {
+      "ip": "192.168.150.18",
+      "brand": "HP",
+      "brandConfidence": 0.85,
+      "identification": {
+        "model": {
+          "value": "HP Officejet Pro X476dw MFP",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.2.1.43.5.1.1.16.1"
+        },
+        "serialNumber": {
+          "value": "CN36FDJ03K",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.88,
+          "oid": "1.3.6.1.2.1.43.5.1.1.17.1"
+        }
+      },
+      "status": {},
+      "supplies": {},
+      "counters": {
+        "totalPages": {
+          "value": 86749,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.95,
+          "oid": "1.3.6.1.2.1.43.10.2.1.4.1.1"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 267,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 3
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.91",
+      "brand": "Xerox",
+      "brandConfidence": 0.98,
+      "identification": {},
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "cajaResiduos": {
+            "value": 100,
+            "unit": "percent",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.10"
+          },
+          "fusor": {
+            "value": 50,
+            "unit": "percent",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.9"
+          },
+          "tonerBlack": {
+            "value": 81,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          },
+          "tonerCyan": {
+            "value": 3,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.2"
+          },
+          "tonerMagenta": {
+            "value": 20,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          },
+          "tonerYellow": {
+            "value": 82,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.4"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 289765,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.2.1.43.10.2.1.4.1.1"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 1549,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 1
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.35",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung M332x 382x 402x Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "fusor": {
+            "value": 84,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.2"
+          },
+          "retardPad": {
+            "value": 80,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.7"
+          },
+          "tonerBlack": {
+            "value": 93,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          },
+          "transferRoller": {
+            "value": 85,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 14372,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 1670,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.17",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung M4370 5370 Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "fusor": {
+            "value": 99,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          },
+          "tonerBlack": {
+            "value": 46,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 64359,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 2604,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.12",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung M536x Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "fusor": {
+            "value": 99,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          },
+          "tonerBlack": {
+            "value": 49,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 271480,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 3088,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.90",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung M408x Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "fusor": {
+            "value": 99,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.2"
+          },
+          "retardPad": {
+            "value": 99,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.9"
+          },
+          "tonerBlack": {
+            "value": 75,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 237843,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 3344,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.7",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung M4370 5370 Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "fusor": {
+            "value": 78,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          },
+          "tonerBlack": {
+            "value": 53,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 166981,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 3922,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.28",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung M4370 5370 Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "fusor": {
+            "value": 94,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          },
+          "tonerBlack": {
+            "value": 88,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 160209,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 4176,
+        "probeAttempts": 1,
+        "probeStatus": "success",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": false,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    },
+    {
+      "ip": "192.168.150.20",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "identification": {
+        "model": {
+          "value": "Samsung SCX-6545X Series",
+          "unit": "string",
+          "source": "vendor_oid",
+          "confidence": 0.9,
+          "oid": "1.3.6.1.4.1.236.11.5.11.40.27.1.0"
+        }
+      },
+      "status": {},
+      "supplies": {
+        "dynamicSupplies": {
+          "adfRoller": {
+            "value": 99,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.8"
+          },
+          "drumBlack": {
+            "value": 99,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.2"
+          },
+          "fusor": {
+            "value": 65,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
+          },
+          "tonerBlack": {
+            "value": 96,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.1"
+          },
+          "transferRoller": {
+            "value": 30,
+            "unit": "pages_remaining",
+            "confidence": 0.8,
+            "status": "ok",
+            "source": "discovered_via_walk",
+            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.4"
+          }
+        }
+      },
+      "counters": {
+        "totalPages": {
+          "value": 86528,
+          "unit": "pages",
+          "source": "vendor_oid",
+          "confidence": 0.85,
+          "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
+        }
+      },
+      "unsupportedFields": [],
+      "realErrors": [],
+      "missingSections": [],
+      "metadata": {
+        "responseTimeMs": 20988,
+        "probeAttempts": 1,
+        "probeStatus": "slow",
+        "oidsAttempted": 0,
+        "oidsSuccessful": 0,
+        "timeoutEncoded": false,
+        "partialData": true,
+        "oidCoverage": {
+          "vendor_oid": 2
+        }
+      },
+      "timestamp": "2025-12-22T19:28:20Z"
+    }
+  ]
+}

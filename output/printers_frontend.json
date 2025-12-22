@@ -1,0 +1,911 @@
+{
+  "meta": {
+    "version": "1.0",
+    "exportTime": "2025-12-22T19:28:41-03:00",
+    "totalPrinters": 9,
+    "successCount": 9,
+    "partialCount": 0,
+    "failedCount": 0,
+    "criticalCount": 6,
+    "healthyCount": 5,
+    "byBrand": {
+      "HP": 1,
+      "Samsung": 7,
+      "Xerox": 1
+    },
+    "totalPages": 1378286,
+    "averageHealth": 57
+  },
+  "printers": [
+    {
+      "id": "HP5E61F6-CN36FDJ03K",
+      "ip": "192.168.150.18",
+      "brand": "HP",
+      "brandConfidence": 0.85,
+      "model": "HP Officejet Pro X476dw MFP",
+      "serialNumber": "CN36FDJ03K",
+      "hostname": "HP5E61F6",
+      "status": "inactivo",
+      "totalPages": 86749,
+      "supplies": [
+        {
+          "name": "consumable_4",
+          "type": "other",
+          "description": "black ink HP CN625A",
+          "level": 603,
+          "max": 2513,
+          "percentage": 24,
+          "status": "Crítico",
+          "needOrder": true
+        },
+        {
+          "name": "Tóner Cyan",
+          "type": "toner",
+          "description": "cyan ink HP CN626A",
+          "level": 423,
+          "max": 1114,
+          "percentage": 38,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Amarillo",
+          "type": "toner",
+          "description": "yellow ink HP CN628A",
+          "level": 483,
+          "max": 1074,
+          "percentage": 45,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Magenta",
+          "type": "toner",
+          "description": "magenta ink HP CN627A",
+          "level": 507,
+          "max": 1079,
+          "percentage": 47,
+          "status": "Bajo",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 70,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 12,
+        "Páginas Totales": 86749
+      },
+      "networkInfo": {
+        "dhcpEnabled": "2",
+        "gateway": "2"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 267,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 15
+    },
+    {
+      "id": "XRX9C934E992FE4-3712107021",
+      "ip": "192.168.150.91",
+      "brand": "Xerox",
+      "brandConfidence": 0.98,
+      "model": "Xerox AltaLink C8055 Multifunction Printer",
+      "serialNumber": "3712107021",
+      "hostname": "XRX9C934E992FE4",
+      "status": "listo",
+      "totalPages": 289765,
+      "supplies": [
+        {
+          "name": "Tóner Cyan",
+          "type": "toner",
+          "description": "Cyan Toner, PN 006R01512;SN981F7580E000045D",
+          "level": 90,
+          "max": 3000,
+          "percentage": 3,
+          "status": "Agotado",
+          "needOrder": true
+        },
+        {
+          "name": "Tóner Magenta",
+          "type": "toner",
+          "description": "Magenta Toner, PN 006R01511;SN93189A80E0000439",
+          "level": 600,
+          "max": 3000,
+          "percentage": 20,
+          "status": "Crítico",
+          "needOrder": true
+        },
+        {
+          "name": "cajaResiduos",
+          "type": "other",
+          "description": "Waste Toner Container, PN 008R13061;SNunknown",
+          "level": 100,
+          "max": 100,
+          "percentage": 100,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tambor",
+          "type": "drum",
+          "description": "Drum Cartridge (R4), PN 013R00662;SN5011A080E00004EC",
+          "level": 37,
+          "max": 100,
+          "percentage": 37,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_13",
+          "type": "other",
+          "description": "Fan Filter, PN  ;SNunknown",
+          "level": 100,
+          "max": 100,
+          "percentage": 100,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner, PN 006R01509;SN99172880E000044B",
+          "level": 4293,
+          "max": 5300,
+          "percentage": 81,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Amarillo",
+          "type": "toner",
+          "description": "Yellow Toner, PN 006R01510;SN8F18BD80E000041B",
+          "level": 2531,
+          "max": 3050,
+          "percentage": 83,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser, PN unknown;SNunknown",
+          "level": 50,
+          "max": 100,
+          "percentage": 50,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "Correa de Transferencia",
+          "type": "other",
+          "description": "Transfer Belt Cleaner, PN 001R00613;SNunknown",
+          "level": 15,
+          "max": 100,
+          "percentage": 15,
+          "status": "Crítico",
+          "needOrder": true
+        },
+        {
+          "name": "Contenedor de Residuos",
+          "type": "waste",
+          "description": "Waste Toner Container, PN 008R13061;SNunknown",
+          "level": 100,
+          "max": 100,
+          "percentage": 100,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_12",
+          "type": "other",
+          "description": "Second Bias Transfer Roll, PN 008R13064;SNunknown",
+          "level": 47,
+          "max": 100,
+          "percentage": 47,
+          "status": "Bajo",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 4367,
+        "Página - Fax": 4,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas B\u0026N Duplex": 787,
+        "Páginas Copia": 787,
+        "Páginas Copia Color": 787,
+        "Páginas Duplex": 1575,
+        "Páginas Monocromáticas": 1200,
+        "Páginas Totales": 289765,
+        "Páginas a Color": 2400
+      },
+      "networkInfo": {
+        "dhcpEnabled": "3",
+        "gateway": "2",
+        "macAddress": "\ufffd\ufffdN\ufffd/\ufffd"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 1549,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 0
+    },
+    {
+      "id": "SEC30CDA7C72268-ZDBQBJCH500055B",
+      "ip": "192.168.150.35",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung M332x 382x 402x Series",
+      "serialNumber": "ZDBQBJCH500055B",
+      "hostname": "SEC30CDA7C72268",
+      "status": "inactivo",
+      "totalPages": 14372,
+      "supplies": [
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller ",
+          "level": 85628,
+          "max": 100000,
+          "percentage": 85.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-21062902908",
+          "level": 13950,
+          "max": 15000,
+          "percentage": 93,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "retardPad",
+          "type": "other",
+          "description": "Tray 1 Retard Roller ",
+          "level": 48033,
+          "max": 60000,
+          "percentage": 80.1,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser ",
+          "level": 75628,
+          "max": 90000,
+          "percentage": 84,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "MP Retard Roller ",
+          "level": 77595,
+          "max": 80000,
+          "percentage": 97,
+          "status": "OK",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 125,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 14372,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "2",
+        "gateway": "1",
+        "macAddress": "0ͧ\ufffd\"h"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 1670,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 100
+    },
+    {
+      "id": "SEC30CDA7F3CA4A-075PBJFK20006GK\u0000",
+      "ip": "192.168.150.17",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung M4370 5370 Series",
+      "serialNumber": "075PBJFK20006GK\u0000",
+      "hostname": "SEC30CDA7F3CA4A",
+      "status": "inactivo",
+      "totalPages": 64359,
+      "supplies": [
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 123809,
+          "max": 125000,
+          "percentage": 99,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_2",
+          "type": "other",
+          "description": "Black Imaging Unit S/N:CRUM-22092803291",
+          "level": 67000,
+          "max": 100000,
+          "percentage": 67,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_6",
+          "type": "other",
+          "description": "ADF Retard Pad",
+          "level": 85705,
+          "max": 100000,
+          "percentage": 85.7,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_10",
+          "type": "other",
+          "description": "MP Holder Pad",
+          "level": 49877,
+          "max": 50000,
+          "percentage": 99.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-23051120555",
+          "level": 13800,
+          "max": 30000,
+          "percentage": 46,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser S/N:                ",
+          "level": 249124,
+          "max": 250000,
+          "percentage": 99.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 1 Roller",
+          "level": 234690,
+          "max": 250000,
+          "percentage": 93.9,
+          "status": "OK",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 152,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 64359,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "2",
+        "gateway": "1",
+        "macAddress": "0ͧ\ufffd\ufffdJ"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 2604,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 80
+    },
+    {
+      "id": "SEC8425198F2B7F-0C7RBJFM20000VX ",
+      "ip": "192.168.150.12",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung M536x Series",
+      "serialNumber": "0C7RBJFM20000VX ",
+      "hostname": "SEC8425198F2B7F",
+      "status": "listo",
+      "totalPages": 271480,
+      "supplies": [
+        {
+          "name": "consumable_10",
+          "type": "other",
+          "description": "MP Holder Pad",
+          "level": 159,
+          "max": 50000,
+          "percentage": 0.3,
+          "status": "Agotado",
+          "needOrder": true
+        },
+        {
+          "name": "consumable_6",
+          "type": "other",
+          "description": "ADF Retard Pad",
+          "level": 49404,
+          "max": 50000,
+          "percentage": 98.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_2",
+          "type": "other",
+          "description": "Black Imaging Unit S/N:CRUM-24121901331",
+          "level": 84000,
+          "max": 100000,
+          "percentage": 84,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser S/N:                ",
+          "level": 248929,
+          "max": 250000,
+          "percentage": 99.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-24030716547",
+          "level": 14700,
+          "max": 30000,
+          "percentage": 49,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 2 Roller",
+          "level": 249876,
+          "max": 250000,
+          "percentage": 100,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 123929,
+          "max": 125000,
+          "percentage": 99.1,
+          "status": "OK",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 445,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 271480,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "3",
+        "gateway": "1",
+        "macAddress": "\ufffd%\u0019\ufffd+"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 3088,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 35
+    },
+    {
+      "id": "SEC30CDA7C36776-0A9XBJEH3000CVP ",
+      "ip": "192.168.150.90",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung M408x Series",
+      "serialNumber": "0A9XBJEH3000CVP ",
+      "hostname": "SEC30CDA7C36776",
+      "status": "listo",
+      "totalPages": 237843,
+      "supplies": [
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-23111700080",
+          "level": 15000,
+          "max": 20000,
+          "percentage": 75,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser S/N:                ",
+          "level": 89783,
+          "max": 90000,
+          "percentage": 99.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "retardPad",
+          "type": "other",
+          "description": "Tray 2 Retard Roller Life",
+          "level": 199254,
+          "max": 200000,
+          "percentage": 99.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 2 Roller",
+          "level": 199254,
+          "max": 200000,
+          "percentage": 99.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 123545,
+          "max": 150000,
+          "percentage": 82.4,
+          "status": "OK",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 17,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 237843,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "3",
+        "gateway": "1",
+        "macAddress": "0ͧ\ufffdgv"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 3344,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 100
+    },
+    {
+      "id": "SEC30CDA7F3C9F9-079NBJFH8000CEN ",
+      "ip": "192.168.150.7",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung M4370 5370 Series",
+      "serialNumber": "079NBJFH8000CEN ",
+      "hostname": "SEC30CDA7F3C9F9",
+      "status": "inactivo",
+      "totalPages": 166981,
+      "supplies": [
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 63732,
+          "max": 125000,
+          "percentage": 51,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 2 Roller",
+          "level": 249720,
+          "max": 250000,
+          "percentage": 99.9,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_10",
+          "type": "other",
+          "description": "MP Holder Pad",
+          "level": 3,
+          "max": 50000,
+          "percentage": 0,
+          "status": "Agotado",
+          "needOrder": true
+        },
+        {
+          "name": "consumable_6",
+          "type": "other",
+          "description": "ADF Retard Pad",
+          "level": 86273,
+          "max": 100000,
+          "percentage": 86.3,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser S/N:                ",
+          "level": 195342,
+          "max": 250000,
+          "percentage": 78.1,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-14101511782",
+          "level": 15900,
+          "max": 30000,
+          "percentage": 53,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_2",
+          "type": "other",
+          "description": "Black Imaging Unit S/N:CRUM-23072506721",
+          "level": 48000,
+          "max": 100000,
+          "percentage": 48,
+          "status": "Bajo",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 2878,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 166981,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "2",
+        "gateway": "1",
+        "macAddress": "0ͧ\ufffd\ufffd\ufffd"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 3922,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 25
+    },
+    {
+      "id": "SEC30CDA7F3C9FC-079NBJFH8000D5V ",
+      "ip": "192.168.150.28",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung M4370 5370 Series",
+      "serialNumber": "079NBJFH8000D5V ",
+      "hostname": "SEC30CDA7F3C9FC",
+      "status": "listo",
+      "totalPages": 160209,
+      "supplies": [
+        {
+          "name": "consumable_6",
+          "type": "other",
+          "description": "ADF Retard Pad",
+          "level": 97174,
+          "max": 100000,
+          "percentage": 97.2,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-24030716659",
+          "level": 26400,
+          "max": 30000,
+          "percentage": 88,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser S/N:                ",
+          "level": 236558,
+          "max": 250000,
+          "percentage": 94.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "MP Roller",
+          "level": 99919,
+          "max": 100000,
+          "percentage": 99.9,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 111558,
+          "max": 125000,
+          "percentage": 89.2,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_10",
+          "type": "other",
+          "description": "MP Holder Pad",
+          "level": 49913,
+          "max": 50000,
+          "percentage": 99.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_2",
+          "type": "other",
+          "description": "Black Imaging Unit S/N:CRUM-24010906932",
+          "level": 28000,
+          "max": 100000,
+          "percentage": 28,
+          "status": "Bajo",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 673,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 160209,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "3",
+        "gateway": "1",
+        "macAddress": "0ͧ\ufffd\ufffd\ufffd"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 4176,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 85
+    },
+    {
+      "id": "SEC001599083BDC-Z510B3CC500110X",
+      "ip": "192.168.150.20",
+      "brand": "Samsung",
+      "brandConfidence": 0.96,
+      "model": "Samsung SCX-6545X Series",
+      "serialNumber": "Z510B3CC500110X",
+      "hostname": "SEC001599083BDC",
+      "status": "listo",
+      "totalPages": 86528,
+      "supplies": [
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser ",
+          "level": 163472,
+          "max": 250000,
+          "percentage": 65.4,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller ",
+          "level": 38472,
+          "max": 125000,
+          "percentage": 30.8,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-14120536139",
+          "level": 24000,
+          "max": 25000,
+          "percentage": 96,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "adfRoller",
+          "type": "roller",
+          "description": "ADF Roller ",
+          "level": 199657,
+          "max": 200000,
+          "percentage": 99.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 1 Roller ",
+          "level": 187952,
+          "max": 250000,
+          "percentage": 75.2,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_9",
+          "type": "other",
+          "description": "ADF Rubber Pad ",
+          "level": 49656,
+          "max": 50000,
+          "percentage": 99.3,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Tambor",
+          "type": "drum",
+          "description": "Black Drum Cartridge S/N:CRUM-14111888676",
+          "level": 79200,
+          "max": 80000,
+          "percentage": 99,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "drumBlack",
+          "type": "drum",
+          "description": "Black Drum Cartridge S/N:CRUM-14111888676",
+          "level": 79200,
+          "max": 80000,
+          "percentage": 99,
+          "status": "OK",
+          "needOrder": false
+        }
+      ],
+      "counters": {
+        "Página - Escáner": 42,
+        "Página - Fax": 1,
+        "Página - Fotocopiadora": 7,
+        "Página - Impresora": 4,
+        "Páginas Monocromáticas": 600,
+        "Páginas Totales": 86528,
+        "Páginas a Color": 600
+      },
+      "networkInfo": {
+        "dhcpEnabled": "3",
+        "gateway": "2",
+        "macAddress": "\u0000\u0015\ufffd\b;\ufffd"
+      },
+      "timestamp": "2025-12-22T19:28:20-03:00",
+      "responseTimeMs": 20988,
+      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "healthScore": 80
+    }
+  ]
+}

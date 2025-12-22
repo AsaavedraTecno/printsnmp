@@ -1,0 +1,22 @@
+{
+  "scanStartTime": "2025-12-22T19:27:40.8643459-03:00",
+  "scanEndTime": "2025-12-22T19:28:41.8724463-03:00",
+  "scanDuration": "61.0s",
+  "range": "192.168.150.1-100",
+  "totalScanned": 100,
+  "totalFound": 9,
+  "totalSuccessful": 9,
+  "communityString": "public",
+  "byBrand": {
+    "HP": 1,
+    "Samsung": 7,
+    "Xerox": 1
+  },
+  "healthStats": {
+    "criticalAlerts": 0,
+    "warnings": 0,
+    "healthy": 0
+  },
+  "avgResponseTimeMs": 4623.111111111111,
+  "successRate": 9
+}
