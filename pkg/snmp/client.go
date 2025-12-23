@@ -1,7 +1,9 @@
 package snmp
 
 import (
+	"encoding/hex"
 	"fmt"
+	"strings"
 	"time"
 
 	"github.com/gosnmp/gosnmp"
@@ -176,9 +178,24 @@ func parseValue(variable gosnmp.SnmpPDU) string {
 
 	switch v := variable.Value.(type) {
 	case string:
-		return v
+		// Limpiar null terminators
+		return strings.TrimRight(v, "\x00")
 	case []byte:
-		return string(v)
+		// Si es exactamente 6 bytes, asumir que es MAC address en formato binario
+		if len(v) == 6 {
+			hexStr := hex.EncodeToString(v)
+			return fmt.Sprintf("%s:%s:%s:%s:%s:%s", hexStr[0:2], hexStr[2:4], hexStr[4:6], hexStr[6:8], hexStr[8:10], hexStr[10:12])
+		}
+
+		// Para otros bytes, intentar interpretar como UTF-8
+		if isValidUTF8(v) && isLikelyText(v) {
+			str := string(v)
+			// Limpiar null terminators
+			return strings.TrimRight(str, "\x00")
+		}
+
+		// Si no es UTF-8 válido o no parece texto, retornar vacío
+		return ""
 	case int:
 		return fmt.Sprintf("%d", v)
 	case uint:
@@ -190,6 +207,54 @@ func parseValue(variable gosnmp.SnmpPDU) string {
 	default:
 		return fmt.Sprintf("%v", v)
 	}
+}
+
+// isValidUTF8 valida si un slice de bytes es UTF-8 válido
+func isValidUTF8(b []byte) bool {
+	for i := 0; i < len(b); {
+		if b[i] < 0x80 {
+			i++
+		} else if b[i] < 0xC0 {
+			return false
+		} else if b[i] < 0xE0 {
+			if i+1 >= len(b) {
+				return false
+			}
+			i += 2
+		} else if b[i] < 0xF0 {
+			if i+2 >= len(b) {
+				return false
+			}
+			i += 3
+		} else if b[i] < 0xF8 {
+			if i+3 >= len(b) {
+				return false
+			}
+			i += 4
+		} else {
+			return false
+		}
+	}
+	return true
+}
+
+// isLikelyText verifica si bytes parecen ser texto (no caracteres de control raros)
+func isLikelyText(b []byte) bool {
+	if len(b) == 0 {
+		return false
+	}
+
+	// Contar cuántos bytes son caracteres imprimibles o espacios en blanco
+	printableCount := 0
+	for _, c := range b {
+		// ASCII printable: 32-126, más tab/newline/carriage return
+		if (c >= 32 && c <= 126) || c == 9 || c == 10 || c == 13 {
+			printableCount++
+		}
+	}
+
+	// Si al menos el 80% de los bytes son imprimibles, parece texto
+	return float64(printableCount)/float64(len(b)) >= 0.8
 }
 
 // ValidateConnection valida si es posible conectar

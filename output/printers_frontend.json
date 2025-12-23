@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "exportTime": "2025-12-22T19:28:41-03:00",
+    "exportTime": "2025-12-22T20:47:20-03:00",
     "totalPrinters": 9,
     "successCount": 9,
     "partialCount": 0,
@@ -29,14 +29,14 @@
       "totalPages": 86749,
       "supplies": [
         {
-          "name": "consumable_4",
-          "type": "other",
-          "description": "black ink HP CN625A",
-          "level": 603,
-          "max": 2513,
-          "percentage": 24,
-          "status": "Crítico",
-          "needOrder": true
+          "name": "Tóner Amarillo",
+          "type": "toner",
+          "description": "yellow ink HP CN628A",
+          "level": 483,
+          "max": 1074,
+          "percentage": 45,
+          "status": "Bajo",
+          "needOrder": false
         },
         {
           "name": "Tóner Cyan",
@@ -49,24 +49,24 @@
           "needOrder": false
         },
         {
-          "name": "Tóner Amarillo",
+          "name": "Tóner Magenta",
           "type": "toner",
-          "description": "yellow ink HP CN628A",
-          "level": 483,
-          "max": 1074,
-          "percentage": 45,
+          "description": "magenta ink HP CN627A",
+          "level": 496,
+          "max": 1079,
+          "percentage": 46,
           "status": "Bajo",
           "needOrder": false
         },
         {
-          "name": "Tóner Magenta",
-          "type": "toner",
-          "description": "magenta ink HP CN627A",
-          "level": 507,
-          "max": 1079,
-          "percentage": 47,
-          "status": "Bajo",
-          "needOrder": false
+          "name": "consumable_4",
+          "type": "other",
+          "description": "black ink HP CN625A",
+          "level": 577,
+          "max": 2513,
+          "percentage": 23,
+          "status": "Crítico",
+          "needOrder": true
         }
       ],
       "counters": {
@@ -80,9 +80,13 @@
         "dhcpEnabled": "2",
         "gateway": "2"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 267,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemServices": "72",
+        "systemUptime": "0 días, 6 horas, 33 minutos, 2 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 251,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 15
     },
     {
@@ -97,24 +101,14 @@
       "totalPages": 289765,
       "supplies": [
         {
-          "name": "Tóner Cyan",
+          "name": "Tóner Negro",
           "type": "toner",
-          "description": "Cyan Toner, PN 006R01512;SN981F7580E000045D",
-          "level": 90,
-          "max": 3000,
-          "percentage": 3,
-          "status": "Agotado",
-          "needOrder": true
-        },
-        {
-          "name": "Tóner Magenta",
-          "type": "toner",
-          "description": "Magenta Toner, PN 006R01511;SN93189A80E0000439",
-          "level": 600,
-          "max": 3000,
-          "percentage": 20,
-          "status": "Crítico",
-          "needOrder": true
+          "description": "Black Toner, PN 006R01509;SN99172880E000044B",
+          "level": 4293,
+          "max": 5300,
+          "percentage": 81,
+          "status": "OK",
+          "needOrder": false
         },
         {
           "name": "cajaResiduos",
@@ -127,19 +121,9 @@
           "needOrder": false
         },
         {
-          "name": "Tambor",
-          "type": "drum",
-          "description": "Drum Cartridge (R4), PN 013R00662;SN5011A080E00004EC",
-          "level": 37,
-          "max": 100,
-          "percentage": 37,
-          "status": "Bajo",
-          "needOrder": false
-        },
-        {
-          "name": "consumable_13",
-          "type": "other",
-          "description": "Fan Filter, PN  ;SNunknown",
+          "name": "Contenedor de Residuos",
+          "type": "waste",
+          "description": "Waste Toner Container, PN 008R13061;SNunknown",
           "level": 100,
           "max": 100,
           "percentage": 100,
@@ -147,13 +131,23 @@
           "needOrder": false
         },
         {
-          "name": "Tóner Negro",
-          "type": "toner",
-          "description": "Black Toner, PN 006R01509;SN99172880E000044B",
-          "level": 4293,
-          "max": 5300,
-          "percentage": 81,
-          "status": "OK",
+          "name": "Correa de Transferencia",
+          "type": "other",
+          "description": "Transfer Belt Cleaner, PN 001R00613;SNunknown",
+          "level": 15,
+          "max": 100,
+          "percentage": 15,
+          "status": "Crítico",
+          "needOrder": true
+        },
+        {
+          "name": "consumable_12",
+          "type": "other",
+          "description": "Second Bias Transfer Roll, PN 008R13064;SNunknown",
+          "level": 47,
+          "max": 100,
+          "percentage": 47,
+          "status": "Bajo",
           "needOrder": false
         },
         {
@@ -177,33 +171,43 @@
           "needOrder": false
         },
         {
-          "name": "Correa de Transferencia",
-          "type": "other",
-          "description": "Transfer Belt Cleaner, PN 001R00613;SNunknown",
-          "level": 15,
-          "max": 100,
-          "percentage": 15,
+          "name": "Tóner Cyan",
+          "type": "toner",
+          "description": "Cyan Toner, PN 006R01512;SN981F7580E000045D",
+          "level": 90,
+          "max": 3000,
+          "percentage": 3,
+          "status": "Agotado",
+          "needOrder": true
+        },
+        {
+          "name": "Tóner Magenta",
+          "type": "toner",
+          "description": "Magenta Toner, PN 006R01511;SN93189A80E0000439",
+          "level": 600,
+          "max": 3000,
+          "percentage": 20,
           "status": "Crítico",
           "needOrder": true
         },
         {
-          "name": "Contenedor de Residuos",
-          "type": "waste",
-          "description": "Waste Toner Container, PN 008R13061;SNunknown",
+          "name": "Tambor",
+          "type": "drum",
+          "description": "Drum Cartridge (R4), PN 013R00662;SN5011A080E00004EC",
+          "level": 37,
+          "max": 100,
+          "percentage": 37,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_13",
+          "type": "other",
+          "description": "Fan Filter, PN  ;SNunknown",
           "level": 100,
           "max": 100,
           "percentage": 100,
           "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "consumable_12",
-          "type": "other",
-          "description": "Second Bias Transfer Roll, PN 008R13064;SNunknown",
-          "level": 47,
-          "max": 100,
-          "percentage": 47,
-          "status": "Bajo",
           "needOrder": false
         }
       ],
@@ -212,7 +216,7 @@
         "Página - Fax": 4,
         "Página - Fotocopiadora": 7,
         "Página - Impresora": 4,
-        "Páginas B\u0026N Duplex": 787,
+        "Páginas B&N Duplex": 787,
         "Páginas Copia": 787,
         "Páginas Copia Color": 787,
         "Páginas Duplex": 1575,
@@ -223,11 +227,18 @@
       "networkInfo": {
         "dhcpEnabled": "3",
         "gateway": "2",
-        "macAddress": "\ufffd\ufffdN\ufffd/\ufffd"
+        "macAddress": "9c:93:4e:99:2f:e4"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 1549,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "System Administrator name not set; System Administrator phone number not set; System Administrator location not set; Device Administrator name not set; Device Administrator phone number not set; Device Administrator location not set; company URL not set"
+        },
+        "systemServices": "79",
+        "systemUptime": "25 días, 3 horas, 22 minutos, 58 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 1500,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 0
     },
     {
@@ -241,6 +252,26 @@
       "status": "inactivo",
       "totalPages": 14372,
       "supplies": [
+        {
+          "name": "consumable_2",
+          "type": "other",
+          "description": "46:75:73:65:72:20",
+          "level": 75628,
+          "max": 90000,
+          "percentage": 84,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "retardPad",
+          "type": "other",
+          "description": "Tray 1 Retard Roller ",
+          "level": 48033,
+          "max": 60000,
+          "percentage": 80.1,
+          "status": "OK",
+          "needOrder": false
+        },
         {
           "name": "Rodillo de Transferencia",
           "type": "roller",
@@ -262,32 +293,12 @@
           "needOrder": false
         },
         {
-          "name": "retardPad",
-          "type": "other",
-          "description": "Tray 1 Retard Roller ",
-          "level": 48033,
-          "max": 60000,
-          "percentage": 80.1,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "Fusor",
-          "type": "other",
-          "description": "Fuser ",
-          "level": 75628,
-          "max": 90000,
-          "percentage": 84,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
           "name": "Rodillo",
           "type": "roller",
-          "description": "MP Retard Roller ",
-          "level": 77595,
-          "max": 80000,
-          "percentage": 97,
+          "description": "Tray 1 Roller ",
+          "level": 78033,
+          "max": 90000,
+          "percentage": 86.7,
           "status": "OK",
           "needOrder": false
         }
@@ -304,31 +315,39 @@
       "networkInfo": {
         "dhcpEnabled": "2",
         "gateway": "1",
-        "macAddress": "0ͧ\ufffd\"h"
+        "macAddress": "30:cd:a7:c7:22:68"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 1670,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemLocation": "Oficina Prevención de riesgos",
+        "systemServices": "104",
+        "systemUptime": "41 días, 17 horas, 30 minutos, 47 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 1693,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 100
     },
     {
-      "id": "SEC30CDA7F3CA4A-075PBJFK20006GK\u0000",
+      "id": "SEC30CDA7F3CA4A-075PBJFK20006GK",
       "ip": "192.168.150.17",
       "brand": "Samsung",
       "brandConfidence": 0.96,
       "model": "Samsung M4370 5370 Series",
-      "serialNumber": "075PBJFK20006GK\u0000",
+      "serialNumber": "075PBJFK20006GK",
       "hostname": "SEC30CDA7F3CA4A",
       "status": "inactivo",
       "totalPages": 64359,
       "supplies": [
         {
-          "name": "Rodillo de Transferencia",
+          "name": "Rodillo",
           "type": "roller",
-          "description": "Transfer Roller",
-          "level": 123809,
-          "max": 125000,
-          "percentage": 99,
+          "description": "Tray 2 Roller",
+          "level": 244875,
+          "max": 250000,
+          "percentage": 98,
           "status": "OK",
           "needOrder": false
         },
@@ -343,22 +362,22 @@
           "needOrder": false
         },
         {
-          "name": "consumable_6",
-          "type": "other",
-          "description": "ADF Retard Pad",
-          "level": 85705,
-          "max": 100000,
-          "percentage": 85.7,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
           "name": "consumable_10",
           "type": "other",
           "description": "MP Holder Pad",
           "level": 49877,
           "max": 50000,
           "percentage": 99.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Fusor",
+          "type": "other",
+          "description": "Fuser S/N:                ",
+          "level": 249124,
+          "max": 250000,
+          "percentage": 99.6,
           "status": "OK",
           "needOrder": false
         },
@@ -373,22 +392,22 @@
           "needOrder": false
         },
         {
-          "name": "Fusor",
+          "name": "consumable_6",
           "type": "other",
-          "description": "Fuser S/N:                ",
-          "level": 249124,
-          "max": 250000,
-          "percentage": 99.6,
+          "description": "ADF Retard Pad",
+          "level": 85705,
+          "max": 100000,
+          "percentage": 85.7,
           "status": "OK",
           "needOrder": false
         },
         {
-          "name": "Rodillo",
+          "name": "Rodillo de Transferencia",
           "type": "roller",
-          "description": "Tray 1 Roller",
-          "level": 234690,
-          "max": 250000,
-          "percentage": 93.9,
+          "description": "Transfer Roller",
+          "level": 123809,
+          "max": 125000,
+          "percentage": 99,
           "status": "OK",
           "needOrder": false
         }
@@ -405,11 +424,19 @@
       "networkInfo": {
         "dhcpEnabled": "2",
         "gateway": "1",
-        "macAddress": "0ͧ\ufffd\ufffdJ"
+        "macAddress": "30:cd:a7:f3:ca:4a"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 2604,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemLocation": "Oficina mesa de servicio",
+        "systemServices": "72",
+        "systemUptime": "367 días, 7 horas, 26 minutos, 26 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 2928,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 80
     },
     {
@@ -424,14 +451,14 @@
       "totalPages": 271480,
       "supplies": [
         {
-          "name": "consumable_10",
+          "name": "consumable_2",
           "type": "other",
-          "description": "MP Holder Pad",
-          "level": 159,
-          "max": 50000,
-          "percentage": 0.3,
-          "status": "Agotado",
-          "needOrder": true
+          "description": "Black Imaging Unit S/N:CRUM-24121901331",
+          "level": 84000,
+          "max": 100000,
+          "percentage": 84,
+          "status": "OK",
+          "needOrder": false
         },
         {
           "name": "consumable_6",
@@ -440,16 +467,6 @@
           "level": 49404,
           "max": 50000,
           "percentage": 98.8,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "consumable_2",
-          "type": "other",
-          "description": "Black Imaging Unit S/N:CRUM-24121901331",
-          "level": 84000,
-          "max": 100000,
-          "percentage": 84,
           "status": "OK",
           "needOrder": false
         },
@@ -474,22 +491,32 @@
           "needOrder": false
         },
         {
-          "name": "Rodillo",
-          "type": "roller",
-          "description": "Tray 2 Roller",
-          "level": 249876,
-          "max": 250000,
-          "percentage": 100,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
           "name": "Rodillo de Transferencia",
           "type": "roller",
           "description": "Transfer Roller",
           "level": 123929,
           "max": 125000,
           "percentage": 99.1,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_10",
+          "type": "other",
+          "description": "MP Holder Pad",
+          "level": 159,
+          "max": 50000,
+          "percentage": 0.3,
+          "status": "Agotado",
+          "needOrder": true
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 1 Roller",
+          "level": 249322,
+          "max": 250000,
+          "percentage": 99.7,
           "status": "OK",
           "needOrder": false
         }
@@ -506,11 +533,18 @@
       "networkInfo": {
         "dhcpEnabled": "3",
         "gateway": "1",
-        "macAddress": "\ufffd%\u0019\ufffd+"
+        "macAddress": "84:25:19:8f:2b:7f"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 3088,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "72",
+        "systemUptime": "352 días, 9 horas, 59 minutos, 22 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 3320,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 35
     },
     {
@@ -524,6 +558,26 @@
       "status": "listo",
       "totalPages": 237843,
       "supplies": [
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 1 Retard Roller Life",
+          "level": 175842,
+          "max": 200000,
+          "percentage": 87.9,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 123545,
+          "max": 150000,
+          "percentage": 82.4,
+          "status": "OK",
+          "needOrder": false
+        },
         {
           "name": "Tóner Negro",
           "type": "toner",
@@ -553,26 +607,6 @@
           "percentage": 99.6,
           "status": "OK",
           "needOrder": false
-        },
-        {
-          "name": "Rodillo",
-          "type": "roller",
-          "description": "Tray 2 Roller",
-          "level": 199254,
-          "max": 200000,
-          "percentage": 99.6,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "Rodillo de Transferencia",
-          "type": "roller",
-          "description": "Transfer Roller",
-          "level": 123545,
-          "max": 150000,
-          "percentage": 82.4,
-          "status": "OK",
-          "needOrder": false
         }
       ],
       "counters": {
@@ -587,11 +621,19 @@
       "networkInfo": {
         "dhcpEnabled": "3",
         "gateway": "1",
-        "macAddress": "0ͧ\ufffdgv"
+        "macAddress": "30:cd:a7:c3:67:76"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 3344,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemLocation": "Laboratorio PC",
+        "systemServices": "72",
+        "systemUptime": "60 días, 2 horas, 7 minutos, 39 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 3365,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 100
     },
     {
@@ -606,26 +648,6 @@
       "totalPages": 166981,
       "supplies": [
         {
-          "name": "Rodillo de Transferencia",
-          "type": "roller",
-          "description": "Transfer Roller",
-          "level": 63732,
-          "max": 125000,
-          "percentage": 51,
-          "status": "Bueno",
-          "needOrder": false
-        },
-        {
-          "name": "Rodillo",
-          "type": "roller",
-          "description": "Tray 2 Roller",
-          "level": 249720,
-          "max": 250000,
-          "percentage": 99.9,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
           "name": "consumable_10",
           "type": "other",
           "description": "MP Holder Pad",
@@ -636,23 +658,13 @@
           "needOrder": true
         },
         {
-          "name": "consumable_6",
+          "name": "consumable_2",
           "type": "other",
-          "description": "ADF Retard Pad",
-          "level": 86273,
+          "description": "Black Imaging Unit S/N:CRUM-23072506721",
+          "level": 48000,
           "max": 100000,
-          "percentage": 86.3,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "Fusor",
-          "type": "other",
-          "description": "Fuser S/N:                ",
-          "level": 195342,
-          "max": 250000,
-          "percentage": 78.1,
-          "status": "OK",
+          "percentage": 48,
+          "status": "Bajo",
           "needOrder": false
         },
         {
@@ -666,13 +678,43 @@
           "needOrder": false
         },
         {
-          "name": "consumable_2",
+          "name": "Fusor",
           "type": "other",
-          "description": "Black Imaging Unit S/N:CRUM-23072506721",
-          "level": 48000,
+          "description": "Fuser S/N:                ",
+          "level": 195342,
+          "max": 250000,
+          "percentage": 78.1,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "ADF Roller",
+          "level": 136273,
+          "max": 150000,
+          "percentage": 90.8,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo de Transferencia",
+          "type": "roller",
+          "description": "Transfer Roller",
+          "level": 63732,
+          "max": 125000,
+          "percentage": 51,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_6",
+          "type": "other",
+          "description": "ADF Retard Pad",
+          "level": 86273,
           "max": 100000,
-          "percentage": 48,
-          "status": "Bajo",
+          "percentage": 86.3,
+          "status": "OK",
           "needOrder": false
         }
       ],
@@ -688,11 +730,18 @@
       "networkInfo": {
         "dhcpEnabled": "2",
         "gateway": "1",
-        "macAddress": "0ͧ\ufffd\ufffd\ufffd"
+        "macAddress": "30:cd:a7:f3:c9:f9"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 3922,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "72",
+        "systemUptime": "452 días, 5 horas, 53 minutos, 42 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 4281,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 25
     },
     {
@@ -707,32 +756,12 @@
       "totalPages": 160209,
       "supplies": [
         {
-          "name": "consumable_6",
+          "name": "consumable_10",
           "type": "other",
-          "description": "ADF Retard Pad",
-          "level": 97174,
-          "max": 100000,
-          "percentage": 97.2,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "Tóner Negro",
-          "type": "toner",
-          "description": "Black Toner Cartridge S/N:CRUM-24030716659",
-          "level": 26400,
-          "max": 30000,
-          "percentage": 88,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "Fusor",
-          "type": "other",
-          "description": "Fuser S/N:                ",
-          "level": 236558,
-          "max": 250000,
-          "percentage": 94.6,
+          "description": "MP Holder Pad",
+          "level": 49913,
+          "max": 50000,
+          "percentage": 99.8,
           "status": "OK",
           "needOrder": false
         },
@@ -747,6 +776,26 @@
           "needOrder": false
         },
         {
+          "name": "consumable_2",
+          "type": "other",
+          "description": "Black Imaging Unit S/N:CRUM-24010906932",
+          "level": 28000,
+          "max": 100000,
+          "percentage": 28,
+          "status": "Bajo",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_6",
+          "type": "other",
+          "description": "ADF Retard Pad",
+          "level": 97174,
+          "max": 100000,
+          "percentage": 97.2,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
           "name": "Rodillo de Transferencia",
           "type": "roller",
           "description": "Transfer Roller",
@@ -757,23 +806,23 @@
           "needOrder": false
         },
         {
-          "name": "consumable_10",
+          "name": "Fusor",
           "type": "other",
-          "description": "MP Holder Pad",
-          "level": 49913,
-          "max": 50000,
-          "percentage": 99.8,
+          "description": "Fuser S/N:                ",
+          "level": 236558,
+          "max": 250000,
+          "percentage": 94.6,
           "status": "OK",
           "needOrder": false
         },
         {
-          "name": "consumable_2",
-          "type": "other",
-          "description": "Black Imaging Unit S/N:CRUM-24010906932",
-          "level": 28000,
-          "max": 100000,
-          "percentage": 28,
-          "status": "Bajo",
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-24030716659",
+          "level": 26400,
+          "max": 30000,
+          "percentage": 88,
+          "status": "OK",
           "needOrder": false
         }
       ],
@@ -789,11 +838,18 @@
       "networkInfo": {
         "dhcpEnabled": "3",
         "gateway": "1",
-        "macAddress": "0ͧ\ufffd\ufffd\ufffd"
+        "macAddress": "30:cd:a7:f3:c9:fc"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 4176,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "72",
+        "systemUptime": "233 días, 4 horas, 14 minutos, 57 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 4427,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 85
     },
     {
@@ -808,16 +864,6 @@
       "totalPages": 86528,
       "supplies": [
         {
-          "name": "Fusor",
-          "type": "other",
-          "description": "Fuser ",
-          "level": 163472,
-          "max": 250000,
-          "percentage": 65.4,
-          "status": "Bueno",
-          "needOrder": false
-        },
-        {
           "name": "Rodillo de Transferencia",
           "type": "roller",
           "description": "Transfer Roller ",
@@ -825,16 +871,6 @@
           "max": 125000,
           "percentage": 30.8,
           "status": "Bajo",
-          "needOrder": false
-        },
-        {
-          "name": "Tóner Negro",
-          "type": "toner",
-          "description": "Black Toner Cartridge S/N:CRUM-14120536139",
-          "level": 24000,
-          "max": 25000,
-          "percentage": 96,
-          "status": "OK",
           "needOrder": false
         },
         {
@@ -848,22 +884,12 @@
           "needOrder": false
         },
         {
-          "name": "Rodillo",
-          "type": "roller",
-          "description": "Tray 1 Roller ",
-          "level": 187952,
-          "max": 250000,
-          "percentage": 75.2,
-          "status": "OK",
-          "needOrder": false
-        },
-        {
-          "name": "consumable_9",
-          "type": "other",
-          "description": "ADF Rubber Pad ",
-          "level": 49656,
-          "max": 50000,
-          "percentage": 99.3,
+          "name": "drumBlack",
+          "type": "drum",
+          "description": "Black Drum Cartridge S/N:CRUM-14111888676",
+          "level": 79200,
+          "max": 80000,
+          "percentage": 99,
           "status": "OK",
           "needOrder": false
         },
@@ -878,12 +904,42 @@
           "needOrder": false
         },
         {
-          "name": "drumBlack",
-          "type": "drum",
-          "description": "Black Drum Cartridge S/N:CRUM-14111888676",
-          "level": 79200,
-          "max": 80000,
-          "percentage": 99,
+          "name": "consumable_9",
+          "type": "other",
+          "description": "ADF Rubber Pad ",
+          "level": 49656,
+          "max": 50000,
+          "percentage": 99.3,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "Rodillo",
+          "type": "roller",
+          "description": "Tray 2 Roller ",
+          "level": 238988,
+          "max": 250000,
+          "percentage": 95.6,
+          "status": "OK",
+          "needOrder": false
+        },
+        {
+          "name": "consumable_3",
+          "type": "other",
+          "description": "46:75:73:65:72:20",
+          "level": 163472,
+          "max": 250000,
+          "percentage": 65.4,
+          "status": "Bueno",
+          "needOrder": false
+        },
+        {
+          "name": "Tóner Negro",
+          "type": "toner",
+          "description": "Black Toner Cartridge S/N:CRUM-14120536139",
+          "level": 24000,
+          "max": 25000,
+          "percentage": 96,
           "status": "OK",
           "needOrder": false
         }
@@ -900,11 +956,18 @@
       "networkInfo": {
         "dhcpEnabled": "3",
         "gateway": "2",
-        "macAddress": "\u0000\u0015\ufffd\b;\ufffd"
+        "macAddress": "00:15:99:08:3b:dc"
       },
-      "timestamp": "2025-12-22T19:28:20-03:00",
-      "responseTimeMs": 20988,
-      "lastUpdate": "2025-12-22T19:28:41-03:00",
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "104",
+        "systemUptime": "0 días, 12 horas, 2 minutos, 23 segundos"
+      },
+      "timestamp": "2025-12-22T20:46:59-03:00",
+      "responseTimeMs": 21197,
+      "lastUpdate": "2025-12-22T20:47:20-03:00",
       "healthScore": 80
     }
   ]

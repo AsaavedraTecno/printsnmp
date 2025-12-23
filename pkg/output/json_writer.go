@@ -1,6 +1,7 @@
 package output
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -56,6 +57,7 @@ type FrontendPrinter struct {
 	Supplies        []SupplyInfo           `json:"supplies"`
 	Counters        map[string]interface{} `json:"counters"`
 	NetworkInfo     map[string]interface{} `json:"networkInfo"`
+	AdminInfo       map[string]interface{} `json:"adminInfo,omitempty"`
 	Timestamp       string                 `json:"timestamp"`
 	ResponseTimeMs  int64                  `json:"responseTimeMs"`
 	LastUpdate      string                 `json:"lastUpdate"`
@@ -243,12 +245,17 @@ func (jw *JSONWriter) generateSummary(
 
 // writeJSON escribe un objeto a JSON
 func (jw *JSONWriter) writeJSON(data interface{}, filePath string) error {
-	jsonData, err := json.MarshalIndent(data, "", "  ")
-	if err != nil {
+	// Usar encoder con SetEscapeHTML(false) para no escapar & como \u0026
+	var buf bytes.Buffer
+	encoder := json.NewEncoder(&buf)
+	encoder.SetEscapeHTML(false)
+	encoder.SetIndent("", "  ")
+
+	if err := encoder.Encode(data); err != nil {
 		return fmt.Errorf("error serializando JSON: %w", err)
 	}
 
-	if err := os.WriteFile(filePath, jsonData, 0644); err != nil {
+	if err := os.WriteFile(filePath, buf.Bytes(), 0644); err != nil {
 		return fmt.Errorf("error escribiendo archivo: %w", err)
 	}
 
@@ -415,6 +422,7 @@ func (jw *JSONWriter) rawToFrontendPrinter(raw collector.PrinterData) FrontendPr
 		Supplies:        make([]SupplyInfo, 0),
 		Counters:        make(map[string]interface{}),
 		NetworkInfo:     make(map[string]interface{}),
+		AdminInfo:       raw.AdminInfo,
 	}
 
 	// Extender información de identificación

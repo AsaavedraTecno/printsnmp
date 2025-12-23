@@ -15,6 +15,7 @@ func Normalize(raw collector.PrinterData) *NormalizedPrinter {
 		Brand:           raw.Brand,
 		BrandConfidence: raw.Confidence,
 		Timestamp:       raw.Timestamp.Format("2006-01-02T15:04:05Z"),
+		AdminInfo:       raw.AdminInfo,
 		Metadata: &Metadata{
 			ResponseTimeMs: raw.ResponseTime.Milliseconds(),
 			ProbeAttempts:  raw.ProbeAttempts,

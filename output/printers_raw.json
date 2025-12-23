@@ -11,14 +11,14 @@
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_5_1": "2",
       "generalInfo_1_3_6_1_2_1_1_1_0": "HP ETHERNET MULTI-ENVIRONMENT",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.11.2.3.9.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "1886436",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "2358293",
       "generalInfo_1_3_6_1_2_1_1_5_0": "HP5E61F6",
       "generalInfo_1_3_6_1_2_1_1_7_0": "72",
       "hostname": "HP5E61F6",
-      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_1_0": "CN628A",
-      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_2_0": "CN626A",
-      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_3_0": "CN627A",
-      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_4_0": "CN625A",
+      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_1_0": "43:4e:36:32:38:41",
+      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_2_0": "43:4e:36:32:36:41",
+      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_3_0": "43:4e:36:32:37:41",
+      "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_1_4_0": "43:4e:36:32:35:41",
       "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_2_1_0": "20140428",
       "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_2_2_0": "20140302",
       "hpCounters_1_3_6_1_4_1_11_2_3_9_4_2_1_4_1_10_1_1_2_3_0": "20140609",
@@ -74,8 +74,8 @@
       "consumables_1_3_6_1_2_1_43_11_1_1_8_1_4": "2513",
       "consumables_1_3_6_1_2_1_43_11_1_1_9_1_1": "483",
       "consumables_1_3_6_1_2_1_43_11_1_1_9_1_2": "423",
-      "consumables_1_3_6_1_2_1_43_11_1_1_9_1_3": "507",
-      "consumables_1_3_6_1_2_1_43_11_1_1_9_1_4": "603"
+      "consumables_1_3_6_1_2_1_43_11_1_1_9_1_3": "496",
+      "consumables_1_3_6_1_2_1_43_11_1_1_9_1_4": "577"
     },
     "counters": {
       "pageCounters_1_3_6_1_2_1_43_10_2_1_2_1_1": "12",
@@ -102,17 +102,21 @@
       "dhcpEnabled": "2",
       "gateway": "2"
     },
+    "adminInfo": {
+      "systemServices": "72",
+      "systemUptime": "0 días, 6 horas, 33 minutos, 2 segundos"
+    },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 267789100,
+    "timestamp": "2025-12-22T20:46:59.5854039-03:00",
+    "responseTime": 251680700,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "consumable_4": {
         "description": "black ink HP CN625A",
-        "level": 603,
+        "level": 577,
         "max": 2513,
-        "percentage": "24.0%",
+        "percentage": "23.0%",
         "status": "Crítico"
       },
       "tonerCyan": {
@@ -124,9 +128,9 @@
       },
       "tonerMagenta": {
         "description": "magenta ink HP CN627A",
-        "level": 507,
+        "level": 496,
         "max": 1079,
-        "percentage": "47.0%",
+        "percentage": "46.0%",
         "status": "Bajo"
       },
       "tonerYellow": {
@@ -186,7 +190,6 @@
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_3_4": "Random Access Memory",
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_3_5": "ATA HGST Model-HGST vGREOA34 PN-RB660AM600T4J",
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_3_6": "Completed Jobs Log on Xerox Network Controller",
-      "deviceInfo_1_3_6_1_2_1_25_3_2_1_3_7": "Intel\ufffd Atom. e3845 Processor 2MB Cache 1.91GHz 2000 MHz",
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_3_8": "Xerox Network Controller",
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_3_9": "Xerox Embedded Ethernet Controller 10/100/1000 Base T Mbps, RJ45",
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_4_1": ".1.3.6.1.4.1.253.8.62.1.35.2.4.1.1",
@@ -220,10 +223,10 @@
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_6_8": "1",
       "deviceInfo_1_3_6_1_2_1_25_3_2_1_6_9": "1",
       "environment_1_3_6_1_2_1_25_3_3_1_1_7": ".0.0",
-      "environment_1_3_6_1_2_1_25_3_3_1_2_7": "32",
+      "environment_1_3_6_1_2_1_25_3_3_1_2_7": "22",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Xerox AltaLink C8055; SS 103.002.022.14600, NC 103.002.14600, UI 103.002.14600, ME 063.022.000, CC 103.002.14600, DF 007.019.000, FI ------, FA 0.0.0, CCOS 103.002.14600, NCOS 103.002.14600, SC 013.015.014, SU 103.002.14600",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.253.8.62.1.35.2.4.1.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "216745949",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "217217817",
       "generalInfo_1_3_6_1_2_1_1_4_0": "System Administrator name not set; System Administrator phone number not set; System Administrator location not set; Device Administrator name not set; Device Administrator phone number not set; Device Administrator location not set; company URL not set",
       "generalInfo_1_3_6_1_2_1_1_5_0": "XRX9C934E992FE4",
       "generalInfo_1_3_6_1_2_1_1_7_0": "79",
@@ -258,7 +261,6 @@
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_2_13": "Xerox Internet Fax Service",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_2_5": "Xerox Fixed Disk",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_2_6": "Completed Jobs Log on Xerox Network Controller",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_2_7": "Intel\ufffd Atom. e3845 Processor 2MB Cache 1.91GHz 2000 MHz",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_2_8": "Xerox Network Controller",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_2_9": "Xerox Embedded Ethernet Controller 10/100/1000 Base T Mbps, RJ45",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_3_1": "3712107021",
@@ -281,26 +283,6 @@
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_4_7": "11",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_4_8": "12",
       "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_4_9": "12",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_1": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_10": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_11": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_12": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_13": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_5": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_6": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_7": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_8": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_8_9": "\u0007\ufffd\t\u0005\u0016\f \u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_1": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_10": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_11": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_12": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_13": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_5": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_6": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_7": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_8": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
-      "xeroxCounters_1_3_6_1_4_1_253_8_53_3_2_1_9_9": "\u0007\ufffd\u000b\u001b\u000f\u0019\n\u0000",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_1_10_180_57": "180",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_1_10_20_11": "20",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_1_10_20_12": "20",
@@ -1205,7 +1187,7 @@
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_13": "Display Network Information in Status Region",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_130": "SNMP v3 Xadmin Account Enable",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_131": "SNMP v3 Xdriver Account Enable",
-      "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_132": "Xadmin",
+      "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_132": "58:61:64:6d:69:6e",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_133": "Xdrivers",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_137": "Restrict System Accounts Enable",
       "xeroxSupplies_1_3_6_1_4_1_253_8_53_13_2_1_8_1_180_14": "System Keyboard Language",
@@ -1479,12 +1461,19 @@
     "networkInfo": {
       "dhcpEnabled": "3",
       "gateway": "2",
-      "macAddress": "\ufffd\ufffdN\ufffd/\ufffd"
+      "macAddress": "9c:93:4e:99:2f:e4"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "System Administrator name not set; System Administrator phone number not set; System Administrator location not set; Device Administrator name not set; Device Administrator phone number not set; Device Administrator location not set; company URL not set"
+      },
+      "systemServices": "79",
+      "systemUptime": "25 días, 3 horas, 22 minutos, 58 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 1549577200,
+    "timestamp": "2025-12-22T20:46:59.5854039-03:00",
+    "responseTime": 1500549100,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "belt": {
@@ -1570,7 +1559,7 @@
       "Página - Fax": 4,
       "Página - Fotocopiadora": 7,
       "Página - Impresora": 4,
-      "Páginas B\u0026N Duplex": 787,
+      "Páginas B&N Duplex": 787,
       "Páginas Copia": 787,
       "Páginas Copia Color": 787,
       "Páginas Duplex": 1575,
@@ -1612,7 +1601,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_1_2": ".0.0",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung SL-M4020ND; V4.00.02.07 APR-21-2016;Engine V1.00.13;NIC V4.01.47 APR-21-2016;S/N ZDBQBJCH500055B",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".3.9.19259646.774911022.774780209.842151217.892875577.808464433.959525424.909192754.808726072",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "360117763",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "360544809",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC30CDA7C72268",
       "generalInfo_1_3_6_1_2_1_1_6_0": "Oficina Prevención de riesgos",
@@ -1715,8 +1704,6 @@
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_8_7_0": "6",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_8_8_0": "100",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_8_9_0": "1",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffd\u0001\u0003\ufffd]\ufffd\ufffd\ufffd",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_20_0": "Sleeping.../",
       "serialNumber": "ZDBQBJCH500055B",
       "sysDescr": "Samsung SL-M4020ND; V4.00.02.07 APR-21-2016;Engine V1.00.13;NIC V4.01.47 APR-21-2016;S/N ZDBQBJCH500055B"
@@ -1750,7 +1737,7 @@
       "consumables_1_3_6_1_2_1_43_11_1_1_5_1_6": "1",
       "consumables_1_3_6_1_2_1_43_11_1_1_5_1_7": "1",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_1": "Black Toner Cartridge S/N:CRUM-21062902908",
-      "consumables_1_3_6_1_2_1_43_11_1_1_6_1_2": "Fuser ",
+      "consumables_1_3_6_1_2_1_43_11_1_1_6_1_2": "46:75:73:65:72:20",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_3": "Transfer Roller ",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_4": "MP Roller ",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_5": "MP Retard Roller ",
@@ -1777,14 +1764,6 @@
       "consumables_1_3_6_1_2_1_43_11_1_1_9_1_5": "77595",
       "consumables_1_3_6_1_2_1_43_11_1_1_9_1_6": "78033",
       "consumables_1_3_6_1_2_1_43_11_1_1_9_1_7": "48033",
-      "fusor": {
-        "description": "Fuser ",
-        "level": "75628",
-        "max": "90000",
-        "oid_desc": "1.3.6.1.2.1.43.11.1.1.6.1.2",
-        "oid_level": "1.3.6.1.2.1.43.11.1.1.9.1.2",
-        "oid_max": "1.3.6.1.2.1.43.11.1.1.8.1.2"
-      },
       "retardPad": {
         "description": "Tray 1 Retard Roller ",
         "level": "48033",
@@ -1843,16 +1822,24 @@
     "networkInfo": {
       "dhcpEnabled": "2",
       "gateway": "1",
-      "macAddress": "0ͧ\ufffd\"h"
+      "macAddress": "30:cd:a7:c7:22:68"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemLocation": "Oficina Prevención de riesgos",
+      "systemServices": "104",
+      "systemUptime": "41 días, 17 horas, 30 minutos, 47 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 1670602700,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 1693413200,
     "probeAttempts": 1,
     "normalizedSupplies": {
-      "fusor": {
-        "description": "Fuser ",
+      "consumable_2": {
+        "description": "46:75:73:65:72:20",
         "level": 75628,
         "max": 90000,
         "percentage": "84.0%",
@@ -1866,10 +1853,10 @@
         "status": "OK"
       },
       "roller": {
-        "description": "MP Retard Roller ",
-        "level": 77595,
-        "max": 80000,
-        "percentage": "97.0%",
+        "description": "Tray 1 Roller ",
+        "level": 78033,
+        "max": 90000,
+        "percentage": "86.7%",
         "status": "OK"
       },
       "tonerBlack": {
@@ -1956,7 +1943,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_2_4": "2",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung M5370LX; V5.H6.01;Engine V1.00.31 07-19-2017;NIC ;S/N 075PBJFK20006GK",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.236.11.5.11.62.1.3.24",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "3173086796",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "3173558682",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC30CDA7F3CA4A",
       "generalInfo_1_3_6_1_2_1_1_6_0": "Oficina mesa de servicio",
@@ -1965,11 +1952,9 @@
       "model": "Samsung M4370 5370 Series",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_1_0": "M5370LX",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_26_0": "MFG:Samsung;CMD:PCL5E,PCL6,POSTSCRIPT,SPDS,XPS,PDF,TIFF,PRN,JPEG,FWV,EXT;MDL:M4370 5370 Series;CLS:PRINTER;CID:SA_PCL6_BW;MODE:SCN;STATUS:IDLE;",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 18:16",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "075PBJFK20006GK\u0000",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffd\u0001\u0001\ufffd.\ufffd\ufffd\ufffd",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\ufffd\u0014\u0004\ufffd\ufffd\ufffd\ufffd\ufffd",
-      "serialNumber": "075PBJFK20006GK\u0000",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 19:35",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "075PBJFK20006GK",
+      "serialNumber": "075PBJFK20006GK",
       "sysDescr": "Samsung M5370LX; V5.H6.01;Engine V1.00.31 07-19-2017;NIC ;S/N 075PBJFK20006GK"
     },
     "status": {
@@ -2107,12 +2092,20 @@
     "networkInfo": {
       "dhcpEnabled": "2",
       "gateway": "1",
-      "macAddress": "0ͧ\ufffd\ufffdJ"
+      "macAddress": "30:cd:a7:f3:ca:4a"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemLocation": "Oficina mesa de servicio",
+      "systemServices": "72",
+      "systemUptime": "367 días, 7 horas, 26 minutos, 26 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 2604093300,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 2928563400,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "consumable_10": {
@@ -2144,10 +2137,10 @@
         "status": "OK"
       },
       "roller": {
-        "description": "Tray 1 Roller",
-        "level": 234690,
+        "description": "Tray 2 Roller",
+        "level": 244875,
         "max": 250000,
-        "percentage": "93.9%",
+        "percentage": "98.0%",
         "status": "OK"
       },
       "tonerBlack": {
@@ -2230,7 +2223,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_2_4": "2",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung M5360RX; V5.A0.00.22;Engine V0.00.57 09-13-2017;NIC ;S/N 0C7RBJFM20000VX",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.236.11.5.11.62.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "3044404313",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "3044876214",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC8425198F2B7F",
       "generalInfo_1_3_6_1_2_1_1_7_0": "72",
@@ -2238,10 +2231,8 @@
       "model": "Samsung M536x Series",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_1_0": "M5360RX",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_26_0": "MFG:Samsung;CMD:PCL5E,PCL6,POSTSCRIPT,SPDS,XPS,PDF,TIFF,PRN,JPEG,FWV,EXT;MDL:M536x Series;CLS:PRINTER;CID:SA_PCL6_BW;MODE:SCN;STATUS:IDLE;",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 20:16",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 21:35",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "0C7RBJFM20000VX ",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffdy\u0012Q1\ufffd\ufffd\ufffd",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\ufffd\u0014\u0004\ufffd\ufffd\ufffd\ufffd\ufffd",
       "serialNumber": "0C7RBJFM20000VX ",
       "sysDescr": "Samsung M5360RX; V5.A0.00.22;Engine V0.00.57 09-13-2017;NIC ;S/N 0C7RBJFM20000VX"
     },
@@ -2384,12 +2375,19 @@
     "networkInfo": {
       "dhcpEnabled": "3",
       "gateway": "1",
-      "macAddress": "\ufffd%\u0019\ufffd+"
+      "macAddress": "84:25:19:8f:2b:7f"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemServices": "72",
+      "systemUptime": "352 días, 9 horas, 59 minutos, 22 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 3088486100,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 3320490500,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "consumable_10": {
@@ -2421,10 +2419,10 @@
         "status": "OK"
       },
       "roller": {
-        "description": "Tray 2 Roller",
-        "level": 249876,
+        "description": "Tray 1 Roller",
+        "level": 249322,
         "max": 250000,
-        "percentage": "100.0%",
+        "percentage": "99.7%",
         "status": "OK"
       },
       "tonerBlack": {
@@ -2516,7 +2514,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_2_5": "2",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung M4080FX; V11.01.03.04_02-27-2017;Engine V1.00.06 01-19-2017_V1.00;NIC ;S/N 0A9XBJEH3000CVP",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.236.11.5.11.62.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "518694109",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "519165993",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC30CDA7C36776",
       "generalInfo_1_3_6_1_2_1_1_6_0": "Laboratorio PC",
@@ -2525,10 +2523,8 @@
       "model": "Samsung M408x Series",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_1_0": "M4080FX",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_26_0": "MFG:Samsung;CMD:PCL5E,PCL6,POSTSCRIPT,SPDS,PDF,TIFF,JPEG,FAX,FWV,EXT;MDL:M408x Series;CLS:PRINTER;CID:SA_PCL6_BW;MODE:FAX2,SCN;STATUS:IDLE;",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-21 19:23",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-21 20:42",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "0A9XBJEH3000CVP ",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffd\ufffdQ\u0011K\ufffd\ufffd\ufffd",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\ufffd\u0014\u0004\ufffd\ufffd\ufffd\ufffd\ufffd",
       "serialNumber": "0A9XBJEH3000CVP ",
       "sysDescr": "Samsung M4080FX; V11.01.03.04_02-27-2017;Engine V1.00.06 01-19-2017_V1.00;NIC ;S/N 0A9XBJEH3000CVP"
     },
@@ -2663,12 +2659,20 @@
     "networkInfo": {
       "dhcpEnabled": "3",
       "gateway": "1",
-      "macAddress": "0ͧ\ufffdgv"
+      "macAddress": "30:cd:a7:c3:67:76"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemLocation": "Laboratorio PC",
+      "systemServices": "72",
+      "systemUptime": "60 días, 2 horas, 7 minutos, 39 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 3344441200,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 3365555700,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "fusor": {
@@ -2686,10 +2690,10 @@
         "status": "OK"
       },
       "roller": {
-        "description": "Tray 2 Roller",
-        "level": 199254,
+        "description": "Tray 1 Retard Roller Life",
+        "level": 175842,
         "max": 200000,
-        "percentage": "99.6%",
+        "percentage": "87.9%",
         "status": "OK"
       },
       "tonerBlack": {
@@ -2778,7 +2782,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_2_4": "2",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung M4370LX; V5.D6.14;Engine V1.00.27 10-14-2015;NIC ;S/N 079NBJFH8000CEN",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.236.11.5.11.62.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "3906930385",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "3907402279",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC30CDA7F3C9F9",
       "generalInfo_1_3_6_1_2_1_1_7_0": "72",
@@ -2786,10 +2790,8 @@
       "model": "Samsung M4370 5370 Series",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_1_0": "M4370LX",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_26_0": "MFG:Samsung;CMD:PCL5E,PCL6,POSTSCRIPT,SPDS,XPS,PDF,TIFF,PRN,JPEG,FAX,FWV,EXT;MDL:M4370 5370 Series;CLS:PRINTER;CID:SA_PCL6_BW;MODE:SCN;STATUS:IDLE;",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 19:28",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 20:46",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "079NBJFH8000CEN ",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffd\u0001\u0001\ufffd5\ufffd\ufffd\ufffd",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\ufffd\u0014\u0004\ufffd\ufffd\ufffd\ufffd\ufffd",
       "serialNumber": "079NBJFH8000CEN ",
       "sysDescr": "Samsung M4370LX; V5.D6.14;Engine V1.00.27 10-14-2015;NIC ;S/N 079NBJFH8000CEN"
     },
@@ -2933,12 +2935,19 @@
     "networkInfo": {
       "dhcpEnabled": "2",
       "gateway": "1",
-      "macAddress": "0ͧ\ufffd\ufffd\ufffd"
+      "macAddress": "30:cd:a7:f3:c9:f9"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemServices": "72",
+      "systemUptime": "452 días, 5 horas, 53 minutos, 42 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 3922030300,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 4281416300,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "consumable_10": {
@@ -2970,10 +2979,10 @@
         "status": "OK"
       },
       "roller": {
-        "description": "Tray 2 Roller",
-        "level": 249720,
-        "max": 250000,
-        "percentage": "99.9%",
+        "description": "ADF Roller",
+        "level": 136273,
+        "max": 150000,
+        "percentage": "90.8%",
         "status": "OK"
       },
       "tonerBlack": {
@@ -3060,7 +3069,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_2_4": "2",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung M4370LX; V5.H6.01;Engine V1.00.31 07-19-2017;NIC ;S/N 079NBJFH8000D5V",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.236.11.5.11.62.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "2014177903",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "2014649818",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC30CDA7F3C9FC",
       "generalInfo_1_3_6_1_2_1_1_7_0": "72",
@@ -3068,10 +3077,8 @@
       "model": "Samsung M4370 5370 Series",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_1_0": "M4370LX",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_26_0": "MFG:Samsung;CMD:PCL5E,PCL6,POSTSCRIPT,SPDS,XPS,PDF,TIFF,PRN,JPEG,FWV,EXT;MDL:M4370 5370 Series;CLS:PRINTER;CID:SA_PCL6_BW;MODE:SCN;STATUS:IDLE;",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 18:28",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-22 19:46",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "079NBJFH8000D5V ",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffdy\u0012RX\ufffd\ufffd\ufffd",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\ufffd\u0014\u0004\ufffd\ufffd\ufffd\ufffd\ufffd",
       "serialNumber": "079NBJFH8000D5V ",
       "sysDescr": "Samsung M4370LX; V5.H6.01;Engine V1.00.31 07-19-2017;NIC ;S/N 079NBJFH8000D5V"
     },
@@ -3214,12 +3221,19 @@
     "networkInfo": {
       "dhcpEnabled": "3",
       "gateway": "1",
-      "macAddress": "0ͧ\ufffd\ufffd\ufffd"
+      "macAddress": "30:cd:a7:f3:c9:fc"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemServices": "72",
+      "systemUptime": "233 días, 4 horas, 14 minutos, 57 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 4176727400,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 4427932000,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "consumable_10": {
@@ -3329,7 +3343,7 @@
       "environment_1_3_6_1_2_1_25_3_3_1_1_2": ".0.0",
       "generalInfo_1_3_6_1_2_1_1_1_0": "Samsung SCX-6545X Series; V2.00.03.01 03-23-2012;Engine 0.03.21;NIC V5.01.61(6545NX) 02-27-2012;S/N Z510B3CC500110X",
       "generalInfo_1_3_6_1_2_1_1_2_0": ".1.3.6.1.4.1.236.11.5.1",
-      "generalInfo_1_3_6_1_2_1_1_3_0": "3860600",
+      "generalInfo_1_3_6_1_2_1_1_3_0": "4334400",
       "generalInfo_1_3_6_1_2_1_1_4_0": "Administrator",
       "generalInfo_1_3_6_1_2_1_1_5_0": "SEC001599083BDC",
       "generalInfo_1_3_6_1_2_1_1_7_0": "104",
@@ -3373,7 +3387,7 @@
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_23_0": "55",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_26_0": "MFG:Samsung;CMD:PCL5E,PCL6,POSTSCRIPT,PDF,FWV,EXT;MDL:SCX-6545X Series;CLS:PRINTER;MODE:PCL,SCN;",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_2_0": "V2.00.03.01 03-23-2012",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-23 07:08:43+0000",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_30_0": "2025-12-23 08:27:30+0000",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_4_0": "Z510B3CC500110X ",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_5_0": "1",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_1_7_0": "55",
@@ -3459,9 +3473,7 @@
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_8_7_0": "6",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_8_8_0": "100",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_8_9_0": "1",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_15_0": "\ufffd\u0001\u0003\ufffd`\u0000\u0000\u0000",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_16_0": "\ufffd\u0014\u0002\ufffd\u0000\u0000\u0000\u0000",
-      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_20_0": "12-23-2025 07:09  AM/Poco papel en bandeja 1. Cargue papel.",
+      "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_20_0": "12-23-2025 08:27  AM/Poco papel en bandeja 1. Cargue papel.",
       "samsungCounters_1_3_6_1_4_1_236_11_5_1_1_9_2_0": "86528",
       "serialNumber": "Z510B3CC500110X",
       "sysDescr": "Samsung SCX-6545X Series; V2.00.03.01 03-23-2012;Engine 0.03.21;NIC V5.01.61(6545NX) 02-27-2012;S/N Z510B3CC500110X"
@@ -3511,7 +3523,7 @@
       "consumables_1_3_6_1_2_1_43_11_1_1_5_1_9": "1",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_1": "Black Toner Cartridge S/N:CRUM-14120536139",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_2": "Black Drum Cartridge S/N:CRUM-14111888676",
-      "consumables_1_3_6_1_2_1_43_11_1_1_6_1_3": "Fuser ",
+      "consumables_1_3_6_1_2_1_43_11_1_1_6_1_3": "46:75:73:65:72:20",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_4": "Transfer Roller ",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_5": "MP Roller ",
       "consumables_1_3_6_1_2_1_43_11_1_1_6_1_6": "Tray 1 Roller ",
@@ -3552,14 +3564,6 @@
         "oid_desc": "1.3.6.1.2.1.43.11.1.1.6.1.2",
         "oid_level": "1.3.6.1.2.1.43.11.1.1.9.1.2",
         "oid_max": "1.3.6.1.2.1.43.11.1.1.8.1.2"
-      },
-      "fusor": {
-        "description": "Fuser ",
-        "level": "163472",
-        "max": "250000",
-        "oid_desc": "1.3.6.1.2.1.43.11.1.1.6.1.3",
-        "oid_level": "1.3.6.1.2.1.43.11.1.1.9.1.3",
-        "oid_max": "1.3.6.1.2.1.43.11.1.1.8.1.3"
       },
       "tonerBlack": {
         "description": "Black Toner Cartridge S/N:CRUM-14120536139",
@@ -3617,12 +3621,19 @@
     "networkInfo": {
       "dhcpEnabled": "3",
       "gateway": "2",
-      "macAddress": "\u0000\u0015\ufffd\b;\ufffd"
+      "macAddress": "00:15:99:08:3b:dc"
+    },
+    "adminInfo": {
+      "systemDescription": {
+        "description": "Administrator"
+      },
+      "systemServices": "104",
+      "systemUptime": "0 días, 12 horas, 2 minutos, 23 segundos"
     },
     "errors": [],
     "missingSections": [],
-    "timestamp": "2025-12-22T19:28:20.8837442-03:00",
-    "responseTime": 20988212000,
+    "timestamp": "2025-12-22T20:46:59.5848977-03:00",
+    "responseTime": 21197508100,
     "probeAttempts": 1,
     "normalizedSupplies": {
       "adfRoller": {
@@ -3631,6 +3642,13 @@
         "max": 200000,
         "percentage": "99.8%",
         "status": "OK"
+      },
+      "consumable_3": {
+        "description": "46:75:73:65:72:20",
+        "level": 163472,
+        "max": 250000,
+        "percentage": "65.4%",
+        "status": "Bueno"
       },
       "consumable_9": {
         "description": "ADF Rubber Pad ",
@@ -3653,18 +3671,11 @@
         "percentage": "99.0%",
         "status": "OK"
       },
-      "fusor": {
-        "description": "Fuser ",
-        "level": 163472,
-        "max": 250000,
-        "percentage": "65.4%",
-        "status": "Bueno"
-      },
       "roller": {
-        "description": "Tray 1 Roller ",
-        "level": 187952,
+        "description": "Tray 2 Roller ",
+        "level": 238988,
         "max": 250000,
-        "percentage": "75.2%",
+        "percentage": "95.6%",
         "status": "OK"
       },
       "tonerBlack": {

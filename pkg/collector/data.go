@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/asaavedra/agent-snmp/pkg/oids"
 	"github.com/asaavedra/agent-snmp/pkg/snmp"
 )
 
@@ -22,6 +23,7 @@ type PrinterData struct {
 	Counters        map[string]interface{} `json:"counters"`
 	Trays           map[string]interface{} `json:"trays"`
 	NetworkInfo     map[string]interface{} `json:"networkInfo"`
+	AdminInfo       map[string]interface{} `json:"adminInfo"`
 	Errors          []string               `json:"errors"`
 	MissingSections []string               `json:"missingSections"`
 	Timestamp       time.Time              `json:"timestamp"`
@@ -122,6 +124,7 @@ func (dc *DataCollector) collectFromDevice(ctx context.Context, device DeviceInf
 		Counters:           make(map[string]interface{}),
 		Trays:              make(map[string]interface{}),
 		NetworkInfo:        make(map[string]interface{}),
+		AdminInfo:          make(map[string]interface{}),
 		Errors:             make([]string, 0),
 		MissingSections:    make([]string, 0),
 		Timestamp:          time.Now(),
@@ -169,8 +172,14 @@ func (dc *DataCollector) collectFromDevice(ctx context.Context, device DeviceInf
 	// Recolectar información de red
 	dc.collectNetworkInfo(client, &data)
 
+	// Recolectar información administrativa (ubicación, contacto, uptime)
+	dc.collectAdminInfo(client, &data)
+
 	// Descobrir datos adicionales mediante WALK exhaustivo
 	dc.discoverAdditionalData(client, &data)
+
+	// Extraer ubicación de los datos descubiertos (si no fue capturada directamente)
+	dc.extractLocationFromDiscovered(&data)
 
 	// DESPUÉS de descubrir datos, extraer contadores de página que están en la sección supplies (Xerox, Samsung, etc)
 	dc.extractPageCountersFromSupplies(&data)
@@ -200,22 +209,19 @@ func (dc *DataCollector) CollectConsumiblesViaWalk(client *snmp.SNMPClient, ctx 
 	consumibles := make(map[string]interface{})
 
 	// WALK 1: Obtener descripciones
-	baseOIDDesc := "1.3.6.1.2.1.43.11.1.1.6.1"
-	resultsDesc, err := client.Walk(baseOIDDesc, ctx)
+	resultsDesc, err := client.Walk(oids.ConsumablesDesc, ctx)
 	if err != nil {
 		return consumibles, fmt.Errorf("error en WALK de descripciones: %w", err)
 	}
 
 	// WALK 2: Obtener niveles actuales
-	baseOIDLevel := "1.3.6.1.2.1.43.11.1.1.9.1"
-	resultsLevel, err := client.Walk(baseOIDLevel, ctx)
+	resultsLevel, err := client.Walk(oids.ConsumablesLevel, ctx)
 	if err != nil {
 		resultsLevel = []snmp.WalkResult{}
 	}
 
 	// WALK 3: Obtener máximos
-	baseOIDMax := "1.3.6.1.2.1.43.11.1.1.8.1"
-	resultsMax, err := client.Walk(baseOIDMax, ctx)
+	resultsMax, err := client.Walk(oids.ConsumablesMax, ctx)
 	if err != nil {
 		resultsMax = []snmp.WalkResult{}
 	}
@@ -362,20 +368,12 @@ func (dc *DataCollector) collectIdentification(client *snmp.SNMPClient, data *Pr
 	ctx := snmp.NewContext()
 
 	// OIDs estándar de identificación
-	oids := []struct {
-		name string
-		oid  string
-	}{
-		{"sysDescr", "1.3.6.1.2.1.1.1.0"},
-		{"model", "1.3.6.1.2.1.25.3.2.1.3.1"},
-		{"serialNumber", "1.3.6.1.2.1.43.5.1.1.17.1"},
-		{"firmwareVersion", "1.3.6.1.2.1.25.3.3.1.1.1"},
-		{"hostname", "1.3.6.1.2.1.1.5.0"},
-	}
-
-	oidList := make([]string, len(oids))
-	for i, o := range oids {
-		oidList[i] = o.oid
+	oidList := []string{
+		oids.SysDescr,
+		oids.Model,
+		oids.SerialNumber,
+		oids.FirmwareVersion,
+		oids.Hostname,
 	}
 
 	values, err := client.GetMultiple(oidList, ctx)
@@ -383,9 +381,18 @@ func (dc *DataCollector) collectIdentification(client *snmp.SNMPClient, data *Pr
 		return
 	}
 
-	for _, o := range oids {
-		if val, exists := values[o.oid]; exists && val != nil && val != "" {
-			data.Identification[o.name] = fmt.Sprintf("%v", val)
+	// Mapeo de OID a nombre de campo
+	oidMap := map[string]string{
+		oids.SysDescr:        "sysDescr",
+		oids.Model:           "model",
+		oids.SerialNumber:    "serialNumber",
+		oids.FirmwareVersion: "firmwareVersion",
+		oids.Hostname:        "hostname",
+	}
+
+	for oid, fieldName := range oidMap {
+		if val, exists := values[oid]; exists && val != nil && val != "" {
+			data.Identification[fieldName] = sanitizeNetworkValue(val)
 		}
 	}
 }
@@ -395,49 +402,39 @@ func (dc *DataCollector) collectStatus(client *snmp.SNMPClient, data *PrinterDat
 	ctx := snmp.NewContext()
 
 	// OIDs de estado
-	statusOIDs := []struct {
-		name string
-		oid  string
-	}{
-		{"generalStatus", "1.3.6.1.2.1.25.3.2.1.5.1"},
-		{"printerStatus", "1.3.6.1.4.1.253.8.53.4.2.1"},
-		{"printerOperationalStatus", "1.3.6.1.2.1.43.11.1.1.1"},
-		{"suppliesStatus", "1.3.6.1.2.1.43.11.1.1.10.1.1"},
+	statusOIDs := []string{
+		oids.GeneralStatus,
+		"1.3.6.1.4.1.253.8.53.4.2.1",
+		"1.3.6.1.2.1.43.11.1.1.1",
+		"1.3.6.1.2.1.43.11.1.1.10.1.1",
 	}
 
-	oidList := make([]string, len(statusOIDs))
-	for i, s := range statusOIDs {
-		oidList[i] = s.oid
-	}
-
-	values, err := client.GetMultiple(oidList, ctx)
+	values, err := client.GetMultiple(statusOIDs, ctx)
 	if err != nil {
 		return
 	}
 
-	for _, s := range statusOIDs {
-		if val, exists := values[s.oid]; exists && val != nil && val != "" {
-			// Decodificar estado numérico
-			var statusText string
-			valStr := fmt.Sprintf("%v", val)
-			switch valStr {
-			case "1":
-				statusText = "other"
-			case "2":
-				statusText = "idle"
-			case "3":
-				statusText = "ready"
-			case "4":
-				statusText = "error"
-			case "5":
-				statusText = "offline"
-			case "6":
-				statusText = "busy"
-			default:
-				statusText = valStr
-			}
-			data.Status[s.name] = statusText
+	if val, exists := values[oids.GeneralStatus]; exists && val != nil && val != "" {
+		// Decodificar estado numérico
+		var statusText string
+		valStr := fmt.Sprintf("%v", val)
+		switch valStr {
+		case "1":
+			statusText = "other"
+		case "2":
+			statusText = "idle"
+		case "3":
+			statusText = "ready"
+		case "4":
+			statusText = "error"
+		case "5":
+			statusText = "offline"
+		case "6":
+			statusText = "busy"
+		default:
+			statusText = valStr
 		}
+		data.Status["generalStatus"] = statusText
 	}
 }
 
@@ -445,63 +442,18 @@ func (dc *DataCollector) collectStatus(client *snmp.SNMPClient, data *PrinterDat
 func (dc *DataCollector) collectCounters(client *snmp.SNMPClient, data *PrinterData) {
 	ctx := snmp.NewContext()
 
-	// OIDs estándar y alternativas para detectar contadores de color/B&N
-	counterOIDs := []struct {
-		name string
-		oid  string
-	}{
-		// Estándares RFC 3805
-		{"totalPages", "1.3.6.1.2.1.43.10.2.1.4.1.1"},
-		{"monochromedPages", "1.3.6.1.2.1.43.10.2.1.4.1.2"},
-		{"colorPages", "1.3.6.1.2.1.43.10.2.1.4.1.3"},
-		// Alternativas estándar
-		{"totalPages", "1.3.6.1.2.1.43.10.2.1.4.1.0"},
-		{"monochromedPages", "1.3.6.1.2.1.43.10.2.1.4.2.0"},
-		{"colorPages", "1.3.6.1.2.1.43.10.2.1.4.3.0"},
-		// HP LaserJet
-		{"totalPagesHP", "1.3.6.1.4.1.11.2.3.9.4.2.1.4.1.1"},
-		{"colorPagesHP", "1.3.6.1.4.1.11.2.3.9.4.2.1.4.1.3"},
-		{"monoPagesHP", "1.3.6.1.4.1.11.2.3.9.4.2.1.4.1.2"},
-		{"totalPagesHP2", "1.3.6.1.4.1.11.2.3.9.4.2.1.1.1.5"},
-		{"colorCountHP", "1.3.6.1.4.1.11.2.3.9.4.2.1.1.1.6"},
-		// Samsung
-		{"totalPagesSamsung", "1.3.6.1.4.1.236.11.5.1.1.1.2.1.0"},
-		{"colorPagesSamsung", "1.3.6.1.4.1.236.11.5.1.1.1.2.2.0"},
-		{"monoPagesSamsung", "1.3.6.1.4.1.236.11.5.1.1.1.2.3.0"},
-		// Xerox
-		{"printedPages", "1.3.6.1.4.1.253.8.53.3.2.1.5.1.1.12"},
-		{"copiedPages", "1.3.6.1.4.1.253.8.53.3.2.1.5.1.1.13"},
-		{"scannedPages", "1.3.6.1.4.1.253.8.53.3.2.1.5.1.1.14"},
-		{"colorXerox", "1.3.6.1.4.1.253.8.53.3.2.1.5.1.1.15"},
-		{"monoXerox", "1.3.6.1.4.1.253.8.53.3.2.1.5.1.1.16"},
-		// Ricoh
-		{"totalPagesRicoh", "1.3.6.1.4.1.367.3.2.1.5.1.1.5.0"},
-		{"colorRicoh", "1.3.6.1.4.1.367.3.2.1.5.1.1.6.0"},
-		{"monoRicoh", "1.3.6.1.4.1.367.3.2.1.5.1.1.7.0"},
-		// Konica Minolta
-		{"totalPagesKonica", "1.3.6.1.4.1.1021.1.2.1.5.41.7.1.1"},
-		{"colorKonica", "1.3.6.1.4.1.1021.1.2.1.5.41.7.1.2"},
-		// Canon
-		{"totalPagesCanon", "1.3.6.1.4.1.3582.1.1.1.1.1.5.0"},
-		{"colorCanon", "1.3.6.1.4.1.3582.1.1.1.1.1.6.0"},
-		// Kyocera
-		{"totalPagesKyocera", "1.3.6.1.4.1.2297.4.13.1.1.1.1.0"},
-		{"colorKyocera", "1.3.6.1.4.1.2297.4.13.1.1.1.2.0"},
-	}
-
-	oidList := make([]string, len(counterOIDs))
-	for i, c := range counterOIDs {
-		oidList[i] = c.oid
-	}
+	// Usar OIDs centralizados
+	counterOIDs := oids.OIDsContadoresDirectos
+	oidList := oids.ExtractOIDs(counterOIDs)
 
 	values, err := client.GetMultiple(oidList, ctx)
 	if err == nil {
 		for _, c := range counterOIDs {
-			if val, exists := values[c.oid]; exists && val != nil && val != "" {
+			if val, exists := values[c.OID]; exists && val != nil && val != "" {
 				valStr := fmt.Sprintf("%v", val)
 				// Filtrar valores inválidos
 				if !strings.HasPrefix(valStr, "-") && valStr != "0" {
-					data.Counters[c.name] = valStr
+					data.Counters[c.Nombre] = valStr
 				}
 			}
 		}
@@ -509,7 +461,7 @@ func (dc *DataCollector) collectCounters(client *snmp.SNMPClient, data *PrinterD
 
 	// WALK exhaustivo del árbol de contadores estándar RFC 3805
 	walkCtx := snmp.NewContext()
-	baseOIDCounters := "1.3.6.1.2.1.43.10.2.1"
+	baseOIDCounters := oids.PageCountersBase
 	walkResults, err := client.Walk(baseOIDCounters, walkCtx)
 	if err == nil {
 		for _, result := range walkResults {
@@ -524,25 +476,11 @@ func (dc *DataCollector) collectCounters(client *snmp.SNMPClient, data *PrinterD
 	}
 
 	// WALK en OIDs de fabricantes específicos
-	vendorWalks := []struct {
-		prefix string
-		oid    string
-	}{
-		{"hp", "1.3.6.1.4.1.11.2.3.9.4.2"},
-		{"hp_alt", "1.3.6.1.4.1.11.2.3.9.4.3"},
-		{"samsung", "1.3.6.1.4.1.236.11.5.1"},
-		{"samsung_alt", "1.3.6.1.4.1.236.11.5.11"},
-		{"xerox", "1.3.6.1.4.1.253.8.53.3"},
-		{"xerox_alt", "1.3.6.1.4.1.253.8.53.4"},
-		{"ricoh", "1.3.6.1.4.1.367.3.2"},
-		{"konica", "1.3.6.1.4.1.1021.1.2"},
-		{"canon", "1.3.6.1.4.1.3582.1.1"},
-		{"kyocera", "1.3.6.1.4.1.2297.4.13"},
-	}
+	vendorWalks := oids.OIDsWalkFabricante
 
 	for _, vwalk := range vendorWalks {
 		vendorCtx := snmp.NewContext()
-		vendorResults, err := client.Walk(vwalk.oid, vendorCtx)
+		vendorResults, err := client.Walk(vwalk.OID, vendorCtx)
 		if err == nil {
 			for _, result := range vendorResults {
 				if result.Value != "" && !strings.HasPrefix(result.Value, "-") && result.Value != "0" {
@@ -556,7 +494,7 @@ func (dc *DataCollector) collectCounters(client *snmp.SNMPClient, data *PrinterD
 							strings.HasSuffix(result.OID, ".2") || // segundo índice típicamente mono
 							strings.HasSuffix(result.OID, ".3") { // tercer índice típicamente color
 
-							key := fmt.Sprintf("%s_%s", vwalk.prefix, strings.ReplaceAll(result.OID, ".", "_"))
+							key := fmt.Sprintf("%s_%s", vwalk.Prefijo, strings.ReplaceAll(result.OID, ".", "_"))
 							// Evitar duplicados y priorizar valores ya encontrados
 							if _, exists := data.Counters[key]; !exists {
 								data.Counters[key] = result.Value
@@ -690,25 +628,37 @@ func (dc *DataCollector) collectTraysInfo(client *snmp.SNMPClient, data *Printer
 	}
 }
 
+// sanitizeNetworkValue limpia valores de red que puedan contener datos basura
+func sanitizeNetworkValue(val interface{}) string {
+	valStr := fmt.Sprintf("%v", val)
+
+	// Limpiar null terminators
+	valStr = strings.TrimRight(valStr, "\x00")
+
+	// Si aún contiene caracteres de reemplazo, es datos inválido - retornar vacío
+	if strings.Contains(valStr, "\ufffd") {
+		return ""
+	}
+
+	return valStr
+}
+
 // collectNetworkInfo obtiene información de red detallada
 func (dc *DataCollector) collectNetworkInfo(client *snmp.SNMPClient, data *PrinterData) {
 	ctx := snmp.NewContext()
 
 	// OIDs de red comunes
-	networkOIDs := []struct {
-		name string
-		oid  string
-	}{
-		{"ipAddress", "1.3.6.1.2.1.4.20.1.1.0"},
-		{"macAddress", "1.3.6.1.2.1.2.2.1.6.1"},
-		{"gateway", "1.3.6.1.2.1.4.1.0"},
-		{"subnetMask", "1.3.6.1.2.1.4.20.1.3.0"},
-		{"dhcpEnabled", "1.3.6.1.2.1.25.3.2.1.5.1"},
+	networkOIDs := map[string]string{
+		oids.IPAddress:   "ipAddress",
+		oids.MacAddress:  "macAddress",
+		oids.Gateway:     "gateway",
+		oids.SubnetMask:  "subnetMask",
+		oids.DhcpEnabled: "dhcpEnabled",
 	}
 
-	oidList := make([]string, len(networkOIDs))
-	for i, n := range networkOIDs {
-		oidList[i] = n.oid
+	oidList := make([]string, 0, len(networkOIDs))
+	for oid := range networkOIDs {
+		oidList = append(oidList, oid)
 	}
 
 	values, err := client.GetMultiple(oidList, ctx)
@@ -716,9 +666,117 @@ func (dc *DataCollector) collectNetworkInfo(client *snmp.SNMPClient, data *Print
 		return
 	}
 
-	for _, n := range networkOIDs {
-		if val, exists := values[n.oid]; exists && val != nil && val != "" {
-			data.NetworkInfo[n.name] = fmt.Sprintf("%v", val)
+	for oid, fieldName := range networkOIDs {
+		if val, exists := values[oid]; exists && val != nil && val != "" {
+			data.NetworkInfo[fieldName] = sanitizeNetworkValue(val)
+		}
+	}
+}
+
+// collectAdminInfo obtiene información administrativa útil para toma de decisiones
+func (dc *DataCollector) collectAdminInfo(client *snmp.SNMPClient, data *PrinterData) {
+	ctx := snmp.NewContext()
+
+	// OIDs administrativos útiles
+	adminOIDs := map[string]string{
+		oids.SystemDescription: "systemDescription",
+		oids.SystemLocation:    "systemLocation",
+		oids.SystemUptime:      "systemUptime",
+		oids.SystemServices:    "systemServices",
+	}
+
+	oidList := make([]string, 0, len(adminOIDs))
+	for oid := range adminOIDs {
+		oidList = append(oidList, oid)
+	}
+
+	values, err := client.GetMultiple(oidList, ctx)
+	if err != nil {
+		return
+	}
+
+	for oid, fieldName := range adminOIDs {
+		if val, exists := values[oid]; exists && val != nil && val != "" {
+			valStr := sanitizeNetworkValue(val)
+
+			// Procesar SystemUptime especialmente (convertir de ticks a formato legible)
+			if fieldName == "systemUptime" {
+				if uptimeStr, ok := val.(string); ok {
+					data.AdminInfo[fieldName] = formatUptime(uptimeStr)
+				}
+			} else if fieldName == "systemDescription" {
+				// Extraer información útil de la descripción
+				data.AdminInfo[fieldName] = extractAdminInfo(valStr)
+			} else {
+				// Para systemLocation y otros campos, guardar directamente
+				data.AdminInfo[fieldName] = valStr
+			}
+		}
+	}
+}
+
+// formatUptime convierte ticks de SNMP (centésimas de segundo) a formato legible
+func formatUptime(uptimeStr string) string {
+	// uptimeStr puede ser como "217143009" (en centésimas de segundo)
+	// Intentar parsear como número
+	var ticks int64
+	if _, err := fmt.Sscanf(uptimeStr, "%d", &ticks); err != nil {
+		return uptimeStr
+	}
+
+	// Convertir a segundos
+	seconds := ticks / 100
+	if seconds < 0 {
+		return uptimeStr
+	}
+
+	days := seconds / 86400
+	seconds %= 86400
+	hours := seconds / 3600
+	seconds %= 3600
+	minutes := seconds / 60
+	seconds %= 60
+
+	return fmt.Sprintf("%d días, %d horas, %d minutos, %d segundos", days, hours, minutes, seconds)
+}
+
+// extractAdminInfo extrae datos útiles de la descripción del sistema
+func extractAdminInfo(description string) map[string]string {
+	info := make(map[string]string)
+
+	// Buscar patrones comunes:
+	// "System Administrator name: X; ... location: Y; ... phone: Z"
+
+	// Para ahora, retornar la descripción completa y dejar que el frontend la parsee
+	// En futuro, se puede expandir para extraer componentes específicos
+	info["description"] = description
+
+	// Intentar extraer ubicación si está disponible
+	if strings.Contains(description, "location") {
+		parts := strings.Split(description, ";")
+		for _, part := range parts {
+			if strings.Contains(strings.ToLower(part), "location") {
+				colonParts := strings.Split(part, ":")
+				if len(colonParts) > 1 {
+					info["location"] = strings.TrimSpace(colonParts[1])
+					break
+				}
+			}
+		}
+	}
+
+	return info
+}
+
+// extractLocationFromDiscovered extrae la ubicación de los datos descubiertos en Identification
+func (dc *DataCollector) extractLocationFromDiscovered(data *PrinterData) {
+	// El OID 1.3.6.1.2.1.1.6.0 se guarda como "generalInfo_1_3_6_1_2_1_1_6_0"
+	locationKey := "generalInfo_1_3_6_1_2_1_1_6_0"
+
+	if location, exists := data.Identification[locationKey]; exists && location != nil {
+		locationStr := fmt.Sprintf("%v", location)
+		if locationStr != "" && locationStr != "0" && !strings.Contains(locationStr, "\ufffd") {
+			data.AdminInfo["systemLocation"] = sanitizeNetworkValue(locationStr)
 		}
 	}
 }
@@ -975,40 +1033,8 @@ func (dc *DataCollector) normalizeCounters(counters map[string]interface{}) map[
 	}
 
 	// Mapeo de OIDs estándar RFC 3805 a nombres descriptivos
-	rfc3805OIDMap := map[string]string{
-		// Formato con punto inicial (como aparecen en el SNMP)
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.4.1.1":  "Páginas Totales",        // Total pages
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.4.1.2":  "Páginas Monocromáticas", // Monochrome pages
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.4.1.3":  "Páginas a Color",        // Color pages
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.2.1.1":  "Página - Impresora",
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.3.1.1":  "Página - Fotocopiadora",
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.5.1.1":  "Página - Escáner",
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.6.1.1":  "Página - Fax",
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.9.1.1":  "Páginas a Color",        // Xerox color pages
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.10.1.1": "Páginas Monocromáticas", // Xerox monochrome pages
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.11.1.1": "Páginas Duplex",         // Xerox duplex
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.12.1.1": "Páginas B&N Duplex",
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.13.1.1": "Páginas Copia",
-		"pageCounters__.1.3.6.1.2.1.43.10.2.1.14.1.1": "Páginas Copia Color",
-		// Formato sin punto inicial
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.4.1.1":  "Páginas Totales",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.4.1.2":  "Páginas Monocromáticas",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.4.1.3":  "Páginas a Color",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.2.1.1":  "Página - Impresora",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.3.1.1":  "Página - Fotocopiadora",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.5.1.1":  "Página - Escáner",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.6.1.1":  "Página - Fax",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.9.1.1":  "Páginas a Color",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.10.1.1": "Páginas Monocromáticas",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.11.1.1": "Páginas Duplex",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.12.1.1": "Páginas B&N Duplex",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.13.1.1": "Páginas Copia",
-		"pageCounters__1.3.6.1.2.1.43.10.2.1.14.1.1": "Páginas Copia Color",
-		// Formato solo OID
-		"1.3.6.1.2.1.43.10.2.1.4.1.1": "Páginas Totales",
-		"1.3.6.1.2.1.43.10.2.1.4.1.2": "Páginas Monocromáticas",
-		"1.3.6.1.2.1.43.10.2.1.4.1.3": "Páginas a Color",
-	}
+	// Uso del mapa centralizado desde pkg/oids
+	rfc3805OIDMap := oids.MapaContadoresRFC3805
 
 	for key, val := range counters {
 		valStr := fmt.Sprintf("%v", val)
@@ -1018,7 +1044,7 @@ func (dc *DataCollector) normalizeCounters(counters map[string]interface{}) map[
 			continue
 		}
 
-		// Primero: buscar OID directo en tabla RFC
+		// Primero: buscar OID directo en tabla RFC centralizada
 		if displayName, exists := rfc3805OIDMap[key]; exists {
 			if count := parseCounter(valStr); count >= 0 {
 				normalized[displayName] = count
@@ -1042,7 +1068,7 @@ func (dc *DataCollector) normalizeCounters(counters map[string]interface{}) map[
 					normalized["Páginas Totales"] = count
 				}
 			} else if strings.HasSuffix(oidPart, "_4_1_2") {
-				// OID de monocrome pages
+				// OID de monocromático
 				if count := parseCounter(valStr); count >= 0 {
 					normalized["Páginas Monocromáticas"] = count
 				}

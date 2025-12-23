@@ -1,8 +1,8 @@
 {
   "scanInfo": {
-    "scanStartTime": "2025-12-22T19:27:40.8643459-03:00",
-    "scanEndTime": "2025-12-22T19:28:41.8724463-03:00",
-    "scanDuration": "61.0s",
+    "scanStartTime": "2025-12-22T20:46:19.5719709-03:00",
+    "scanEndTime": "2025-12-22T20:47:20.7827767-03:00",
+    "scanDuration": "61.2s",
     "range": "192.168.150.1-100",
     "totalScanned": 100,
     "totalFound": 9,
@@ -18,7 +18,7 @@
       "warnings": 0,
       "healthy": 0
     },
-    "avgResponseTimeMs": 4623.111111111111,
+    "avgResponseTimeMs": 4773.555555555556,
     "successRate": 9
   },
   "printers": [
@@ -53,11 +53,15 @@
           "oid": "1.3.6.1.2.1.43.10.2.1.4.1.1"
         }
       },
+      "adminInfo": {
+        "systemServices": "72",
+        "systemUptime": "0 días, 6 horas, 33 minutos, 2 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 267,
+        "responseTimeMs": 251,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -68,7 +72,7 @@
           "vendor_oid": 3
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.91",
@@ -137,11 +141,18 @@
           "oid": "1.3.6.1.2.1.43.10.2.1.4.1.1"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "System Administrator name not set; System Administrator phone number not set; System Administrator location not set; Device Administrator name not set; Device Administrator phone number not set; Device Administrator location not set; company URL not set"
+        },
+        "systemServices": "79",
+        "systemUptime": "25 días, 3 horas, 22 minutos, 58 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 1549,
+        "responseTimeMs": 1500,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -152,7 +163,7 @@
           "vendor_oid": 1
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.35",
@@ -170,14 +181,6 @@
       "status": {},
       "supplies": {
         "dynamicSupplies": {
-          "fusor": {
-            "value": 84,
-            "unit": "pages_remaining",
-            "confidence": 0.8,
-            "status": "ok",
-            "source": "discovered_via_walk",
-            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.2"
-          },
           "retardPad": {
             "value": 80,
             "unit": "pages_remaining",
@@ -213,11 +216,19 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemLocation": "Oficina Prevención de riesgos",
+        "systemServices": "104",
+        "systemUptime": "41 días, 17 horas, 30 minutos, 47 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 1670,
+        "responseTimeMs": 1693,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -228,7 +239,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.17",
@@ -273,11 +284,19 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemLocation": "Oficina mesa de servicio",
+        "systemServices": "72",
+        "systemUptime": "367 días, 7 horas, 26 minutos, 26 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 2604,
+        "responseTimeMs": 2928,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -288,7 +307,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.12",
@@ -333,11 +352,18 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "72",
+        "systemUptime": "352 días, 9 horas, 59 minutos, 22 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 3088,
+        "responseTimeMs": 3320,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -348,7 +374,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.90",
@@ -401,11 +427,19 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemLocation": "Laboratorio PC",
+        "systemServices": "72",
+        "systemUptime": "60 días, 2 horas, 7 minutos, 39 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 3344,
+        "responseTimeMs": 3365,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -416,7 +450,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.7",
@@ -461,11 +495,18 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "72",
+        "systemUptime": "452 días, 5 horas, 53 minutos, 42 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 3922,
+        "responseTimeMs": 4281,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -476,7 +517,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.28",
@@ -521,11 +562,18 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "72",
+        "systemUptime": "233 días, 4 horas, 14 minutos, 57 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 4176,
+        "responseTimeMs": 4427,
         "probeAttempts": 1,
         "probeStatus": "success",
         "oidsAttempted": 0,
@@ -536,7 +584,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     },
     {
       "ip": "192.168.150.20",
@@ -570,14 +618,6 @@
             "source": "discovered_via_walk",
             "oid": "1.3.6.1.2.1.43.11.1.1.9.1.2"
           },
-          "fusor": {
-            "value": 65,
-            "unit": "pages_remaining",
-            "confidence": 0.8,
-            "status": "ok",
-            "source": "discovered_via_walk",
-            "oid": "1.3.6.1.2.1.43.11.1.1.9.1.3"
-          },
           "tonerBlack": {
             "value": 96,
             "unit": "pages_remaining",
@@ -605,11 +645,18 @@
           "oid": "1.3.6.1.4.1.236.11.5.11.50.11.1.1.0"
         }
       },
+      "adminInfo": {
+        "systemDescription": {
+          "description": "Administrator"
+        },
+        "systemServices": "104",
+        "systemUptime": "0 días, 12 horas, 2 minutos, 23 segundos"
+      },
       "unsupportedFields": [],
       "realErrors": [],
       "missingSections": [],
       "metadata": {
-        "responseTimeMs": 20988,
+        "responseTimeMs": 21197,
         "probeAttempts": 1,
         "probeStatus": "slow",
         "oidsAttempted": 0,
@@ -620,7 +667,7 @@
           "vendor_oid": 2
         }
       },
-      "timestamp": "2025-12-22T19:28:20Z"
+      "timestamp": "2025-12-22T20:46:59Z"
     }
   ]
 }

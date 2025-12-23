@@ -19,18 +19,19 @@ type StatusCode struct {
 
 // NormalizedPrinter es la estructura mejorada con metadatos reales
 type NormalizedPrinter struct {
-	IP                string              `json:"ip"`
-	Brand             string              `json:"brand"`
-	BrandConfidence   float64             `json:"brandConfidence"`
-	Identification    *IdentificationData `json:"identification"`
-	Status            *StatusData         `json:"status"`
-	Supplies          *SuppliesData       `json:"supplies"`
-	Counters          *CountersData       `json:"counters"`
-	UnsupportedFields []string            `json:"unsupportedFields"` // Campos no disponibles en este dispositivo
-	RealErrors        []string            `json:"realErrors"`        // Errores reales (timeout, auth, etc)
-	MissingSections   []string            `json:"missingSections"`   // Secciones sin datos
-	Metadata          *Metadata           `json:"metadata"`
-	Timestamp         string              `json:"timestamp"`
+	IP                string                 `json:"ip"`
+	Brand             string                 `json:"brand"`
+	BrandConfidence   float64                `json:"brandConfidence"`
+	Identification    *IdentificationData    `json:"identification"`
+	Status            *StatusData            `json:"status"`
+	Supplies          *SuppliesData          `json:"supplies"`
+	Counters          *CountersData          `json:"counters"`
+	AdminInfo         map[string]interface{} `json:"adminInfo,omitempty"` // Información administrativa
+	UnsupportedFields []string               `json:"unsupportedFields"`   // Campos no disponibles en este dispositivo
+	RealErrors        []string               `json:"realErrors"`          // Errores reales (timeout, auth, etc)
+	MissingSections   []string               `json:"missingSections"`     // Secciones sin datos
+	Metadata          *Metadata              `json:"metadata"`
+	Timestamp         string                 `json:"timestamp"`
 }
 
 // Metadata contiene info de la recolección
