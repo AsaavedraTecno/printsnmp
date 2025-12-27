@@ -1,0 +1,39 @@
+# Agent SNMP - Configuración Standalone (MODE 0)
+# Sin backend real, solo FileSink
+
+mode: standalone  # standalone | cloud-sync
+
+# SNMP Discovery
+snmp:
+  community: "public"
+  version: "2c"         # 1 | 2c
+  port: 161
+  timeout_ms: 2000
+  retries: 1
+
+# Discovery
+discovery:
+  enabled: true
+  ip_range: "192.168.150.1-100"  # Rango de IPs a escanear
+  max_concurrent: 10
+
+# Collector
+collector:
+  enabled: true
+  delay_ms: 50
+
+# Sinks
+sinks:
+  file:
+    enabled: true
+    path: "./queue"              # Directorio para buffer local
+  http:
+    enabled: false
+    endpoint: ""                 # URL backend (vacío en standalone)
+    retries: 3
+    backoff_max_seconds: 60
+
+# Logging
+logging:
+  verbose: true
+  level: "info"                 # debug | info | warn | error
